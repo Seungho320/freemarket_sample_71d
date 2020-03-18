@@ -3,7 +3,7 @@
   background-color: white;
 }
 
-.head {
+.topKeyFeatureshead {
   font-size: 27px;
   text-align: center;
   margin: 0 0 40px;
@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.head::after {
+.topKeyFeatureshead::after {
   content: "";
   width: 70px;
   height: 4px;
