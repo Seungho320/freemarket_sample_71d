@@ -1,0 +1,40 @@
+.topMiddleDl {
+  background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
+  background-position: bottom right;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  &__inner {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-align: left;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    &__subtitle {
+      font-size: 27px;
+      font-weight: bold;
+      line-height: 1.4;
+      }
+    }
+    .text {
+      font-size: 18px;
+      margin: 20px 0 30px;
+      line-height: 1.5;
+    }
+  .btn {
+   display: flex;
+   margin: 24px 0 0 0;
+   .aBtn {
+    width: 180px;
+   }
+   .gBtn {
+    width: 180px;
+   }
+  }
+}
+
+a {
+  margin-right: 10px;
+}
