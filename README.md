@@ -48,7 +48,7 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 ### Association
 
-## cardテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -57,7 +57,7 @@ Things you may want to cover:
 |deadline|date|null: false|
 ### Association
 
-## user_addressテーブル
+## user_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area_id|references|null: false, foreign_key: true|
@@ -67,7 +67,7 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 ### Association
 
-## areaテーブル
+## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area|string|null: false|
@@ -80,8 +80,8 @@ Things you may want to cover:
 |item_name|string|null: false|
 |item_text|text|null: false|
 |price|integer|null: false|
-|seler-id|
-|buyer_id|
+|seller-id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
@@ -97,43 +97,32 @@ Things you may want to cover:
 |img|string|null: false|
 ### Association
 
-## categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-## brandテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
 
-## sizeテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|s|string|null: false|
-|m|string|null: false|
-|l|string|null: false|
-|xl|string|null: false|
+|name|string|null: false|
 ### Association
 
-## item_conditionテーブル
+## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|新品/未使用|string|null: false|
-|未使用に近い|string|null: false|
-|目立った傷や汚れなし|string|null: false|
-|やや傷や汚れあり|string|null: false|
-|傷や汚れあり|string|null: false|
-|全体的に状態が悪い|string|null: false|
+|size|string|null: false|
+### Association
+
+## item_conditionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_condition|string|null: false|
 ### Association
 
 ## send_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|1...2|string|null: false|
-|2...4|string|null: false|
-|4...7|string|null: false|
+|send_day|string|null: false|
 ### Association
