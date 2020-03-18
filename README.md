@@ -61,6 +61,7 @@ Things you may want to cover:
 |security|integer|null: false|
 |deadline|date|null: false|
 ### Association
+- belongs_to :user
 
 ## user_addressesテーブル
 |Column|Type|Options|
@@ -71,12 +72,15 @@ Things you may want to cover:
 |building|string||
 |user_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :area
+- belongs_to :user
 
 ## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area|string|null: false|
 ### Association
+- belongs_to :user_addresse
 
 ## itemsテーブル
 |Column|Type|Options|
