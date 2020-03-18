@@ -31,6 +31,11 @@ Things you may want to cover:
 |mail|string|null: false|
 |passward|string|null: false|
 ### Association
+- has_many :seller_items, foreign_key: "seller_id", class_name: "items"
+- has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
+- has_one :user_address
+- has_one :card
+- has_one :profiles,dependent: :destroy
 
 ## profilesテーブル
 |Column|Type|Options|
@@ -57,6 +62,7 @@ Things you may want to cover:
 |security|integer|null: false|
 |deadline|date|null: false|
 ### Association
+- belongs_to :user
 
 ## user_addressesテーブル
 |Column|Type|Options|
@@ -67,12 +73,15 @@ Things you may want to cover:
 |building|string||
 |user_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :area
+- belongs_to :user
 
 ## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area|string|null: false|
 ### Association
+- belongs_to :user_addresse
 
 ## itemsテーブル
 |Column|Type|Options|
