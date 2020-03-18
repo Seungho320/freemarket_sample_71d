@@ -129,6 +129,7 @@ Things you may want to cover:
 |------|----|-------|
 |item_condition|string|null: false|
 ### Association
+- has_many :items
 
 ## send_daysテーブル
 |Column|Type|Options|
