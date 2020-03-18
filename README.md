@@ -112,6 +112,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ### Association
+- has_many :items
 
 ## brandsテーブル
 |Column|Type|Options|
