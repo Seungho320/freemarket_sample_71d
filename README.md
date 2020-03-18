@@ -67,6 +67,8 @@ Things you may want to cover:
 |building|string||
 |user_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :area
+- belongs_to :user
 
 ## areasテーブル
 |Column|Type|Options|
