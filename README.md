@@ -135,3 +135,4 @@ Things you may want to cover:
 |------|----|-------|
 |send_day|string|null: false|
 ### Association
+- has_many :items
