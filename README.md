@@ -33,8 +33,8 @@ Things you may want to cover:
 ### Association
 - has_many :seller_items, foreign_key: "seller_id", class_name: "items"
 - has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
-- has_one :user_address
-- has_one :card
+- has_one :user_address,dependent: :destroy
+- has_one :card,dependent: :destroy
 - has_one :profiles,dependent: :destroy
 
 ## profilesテーブル
@@ -73,7 +73,7 @@ Things you may want to cover:
 |building|string||
 |user_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :area
+- belongs_to_active_hash :area
 - belongs_to :user
 
 ## areasテーブル
@@ -81,7 +81,8 @@ Things you may want to cover:
 |------|----|-------|
 |area|string|null: false|
 ### Association
-- belongs_to :user_addresse
+- has_one :user_addresse
+- has_many :items
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -101,7 +102,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
-- belongs_to :item_imgs, dependent: :destroy
+- has_many :item_imgs, dependent: :destroy
 - belongs_to_active_hash :size
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :send_day
