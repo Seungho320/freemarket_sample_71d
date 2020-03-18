@@ -56,6 +56,7 @@ Things you may want to cover:
 |security|integer|null: false|
 |deadline|date|null: false|
 ### Association
+- belongs_to :user
 
 ## user_addressesテーブル
 |Column|Type|Options|
