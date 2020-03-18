@@ -75,6 +75,7 @@ Things you may want to cover:
 |------|----|-------|
 |area|string|null: false|
 ### Association
+- belongs_to :user_addresse
 
 ## itemsテーブル
 |Column|Type|Options|
