@@ -52,6 +52,7 @@ Things you may want to cover:
 |intoroduction|text||
 |user_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :user
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -98,6 +99,15 @@ Things you may want to cover:
 |area_id|references|null: false, foreign_key: true|
 |send_days_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
+- belongs_to :item_imgs, dependent: :destroy
+- belongs_to_active_hash :size
+- belongs_to_active_hash :item_condition
+- belongs_to_active_hash :send_day
+- belongs_to :category
+- belongs_to :brand
+- belongs_to_active_hash :area
 
 ## item_imgsテーブル
 |Column|Type|Options|
