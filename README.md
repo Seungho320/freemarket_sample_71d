@@ -123,6 +123,7 @@ Things you may want to cover:
 |------|----|-------|
 |size|string|null: false|
 ### Association
+- has_many :items
 
 ## item_conditionsテーブル
 |Column|Type|Options|
