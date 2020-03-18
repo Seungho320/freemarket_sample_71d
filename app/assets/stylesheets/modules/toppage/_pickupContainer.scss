@@ -1,0 +1,43 @@
+.pickupContainer {
+  padding: 80px 0 0;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.pickupContainerhead {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.productHead {
+  text-align: center;
+  &__link {
+    font-size: 24px;
+  text-decoration: none;
+  color: #3CCACE;
+  }
+}
+
+.productLists {
+  width: 780px;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.productList {
+  width: 220px;
+  display: inline-block;
+  float: left;
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.productList--body {
+  background-color: white;
+  padding: 16px;
+}
