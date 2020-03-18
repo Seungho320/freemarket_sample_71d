@@ -19,6 +19,28 @@
     &__text {
       font-size: 35px;
     }
+    &__icon {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+      .aBtn{
+        width: 180px;
+        height: 53px;
+        margin-right: 10px;
+        .image{
+          width: 100%;
+          height: 100%;
+          vertical-align: bottom;}
+      }
+      .gBtn{
+        width: 180px;
+        height: 53px;
+        .image{
+          width: 100%;
+          height: 100%;
+          vertical-align: bottom;}
+      }
+    }
   }
   img {
     width: 100%;
