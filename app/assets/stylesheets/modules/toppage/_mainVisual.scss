@@ -1,0 +1,50 @@
+.mainVisual{
+  width: 100%;
+    height: 560px;
+    background-image: url(material/pict/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+  .content{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    &__subtitle{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 60px;
+      line-height: 1.2;
+      color: #fff;
+    }
+    &__text {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.77778;
+      margin: 16px 0 0 0;
+    }
+    &__button {
+    display: flex;
+    margin: 24px 0 0 0;
+    .aBtn{
+      width: 180px;
+      margin-right: 10px;
+      .image{
+        width: 100%;
+        vertical-align: bottom;}
+    }
+    .gBtn{
+      width: 180px;
+      .image{
+        width: 100%;
+        vertical-align: bottom;}
+    }
+    }
+    
+  
+  }
+}
