@@ -76,14 +76,6 @@ Things you may want to cover:
 - belongs_to_active_hash :area
 - belongs_to :user
 
-## areasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|area|string|null: false|
-### Association
-- has_one :user_addresse
-- has_many :items
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
