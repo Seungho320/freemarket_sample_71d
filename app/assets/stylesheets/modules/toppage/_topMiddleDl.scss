@@ -25,8 +25,16 @@
     }
   .btn {
    display: flex;
+   margin: 24px 0 0 0;
    .aBtn {
-     margin-right: 10px;
+    width: 180px;
+   }
+   .gBtn {
+    width: 180px;
    }
   }
+}
+
+a {
+  margin-right: 10px;
 }
