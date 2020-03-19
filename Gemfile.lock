@@ -58,6 +58,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -174,11 +176,11 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    warden (1.2.8)
-      rack (>= 2.0.6)
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -195,6 +197,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  erb2haml
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
