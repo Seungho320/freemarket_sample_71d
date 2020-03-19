@@ -5,8 +5,8 @@
     .inner__text
       今すぐ無料ダウンロード！
     .inner__icon
-      %a{class: "aBtn", href: "#"}
+      = link_to root_path, class: "aBtn" do
         = image_tag("material/logo/422.png", size: "180x53.33", class: "image")
-      %a{class: "gBtn", href: "#"}
+      = link_to root_path, class: "gBtn" do
         = image_tag("material/logo/google-play-logo.png", size: "180x53.33", class: "image")
   = image_tag "material/pict/bg-appBanner-pict.jpg"
