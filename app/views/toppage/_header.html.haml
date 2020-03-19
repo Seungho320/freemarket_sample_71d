@@ -1,0 +1,26 @@
+%header.main_header
+  .header
+    .header__top
+      .header__top__logo
+        = link_to root_path do
+          = image_tag "material/logo/logo.png", class: "logo-svg"
+      .header__top__form
+        %form
+          .header__top__form__input
+            %input{:name => "keyword", :placeholder => "キーワードで探す", :type => "search", :value => ""}/
+          .header__top__form__btn
+            %button
+              = image_tag "material/icon/icon-search 1.png"
+    .header__meny
+      %nav.header__meny__nav
+        %ul.listsLeft
+          %li.listsLeft__item
+            = link_to root_path, class: "meny_link" do
+              全ての商品
+        %ul.listsRight
+          %li.listsRight__login
+            = link_to root_path, class: "meny_link" do
+              ログイン
+          %li.listsRight__new
+            = link_to root_path, class: "meny_link" do
+              新規会員登録
