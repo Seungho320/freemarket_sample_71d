@@ -85,7 +85,7 @@ Things you may want to cover:
 |seller-id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
 |item_condition_id|references|null: false, foreign_key: true|
 |area_id|references|null: false, foreign_key: true|
@@ -97,8 +97,8 @@ Things you may want to cover:
 - belongs_to_active_hash :size
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :send_day
-- belongs_to :category
-- belongs_to :brand
+- belongs_to_active_hash :category
+- belongs_to_active_hash :brand
 - belongs_to_active_hash :area
 
 ## item_imgsテーブル
