@@ -1,6 +1,4 @@
-.login_header
-  = link_to root_path do
-    = image_tag "material/logo/logo.png", class: "logo1"
+= render "fixed-bar/header"
 .login_main
   .login_main__form
     .login_main__form__header
@@ -21,6 +19,4 @@
             = f.label :保存する
         .actions
           = f.submit "ログイン"
-.login_footer
-  = link_to root_path do
-    = image_tag "material/logo/logo-white.png", class: "logo2"
+= render "fixed-bar/footer"
