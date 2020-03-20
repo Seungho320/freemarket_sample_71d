@@ -1,5 +1,5 @@
 .signUp_header
-  = link_to "#" do
+  = link_to root_path do
     = image_tag "material/logo/logo.png", class: "logo1"
 .signUp_main
   .signUp_main__form
@@ -23,15 +23,14 @@
           - if @minimum_password_length
             %em 必須
           %br/
-          = f.password_field :password, autocomplete: "new-password"
+          = f.password_field :password, autocomplete: "new-password",minlength: "7"
         .field
-          = f.label :パスワード
+          = f.label :パスワードの確認
           %em 必須
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
         .actions
           = f.submit "新規登録"
 .signUp_footer
-  = link_to "#" do
+  = link_to root_path do
     = image_tag "material/logo/logo-white.png", class: "logo2"
-= render "devise/shared/links"
