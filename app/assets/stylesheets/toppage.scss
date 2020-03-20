@@ -1,3 +1,9 @@
-// Place all the styles related to the toppage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "modules/toppage/header";
+@import "modules/toppage/mainVisual";
+@import "modules/toppage/toplntroduction";
+@import "modules/toppage/topMiddleDl";
+@import "modules/toppage/topKeyFeatures";
+@import "modules/toppage/pickupContainer";
+@import "modules/toppage/appBanner";
+@import "modules/toppage/footer";
+@import "modules/toppage/purchaceBtn";
