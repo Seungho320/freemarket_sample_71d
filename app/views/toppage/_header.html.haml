@@ -18,9 +18,17 @@
             = link_to root_path, class: "meny_link" do
               全ての商品
         %ul.listsRight
-          %li.listsRight__login
-            = link_to root_path, class: "meny_link" do
-              ログイン
-          %li.listsRight__new
-            = link_to root_path, class: "meny_link" do
-              新規会員登録
+          - if user_signed_in?
+            %li.header__menu__login
+              = link_to root_path, class: "meny_link" do
+                マイページ
+            %li.listsRight__new
+              = link_to destroy_user_session_path, method: :delete, class: "meny_link" do
+                ログアウト
+          - else
+            %li.listsRight__login
+              = link_to new_user_session_path, class: "meny_link" do
+                ログイン
+            %li.listsRight__new
+              = link_to new_user_registration_path, class: "meny_link" do
+                新規会員登録
