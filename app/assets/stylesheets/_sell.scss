@@ -1,0 +1,192 @@
+.sell-main {
+  background-color: #f5f5f5;
+  height: auto;
+  width: auto;
+  &__form-box {
+    background-color: white;
+    margin: 0 370px;
+    padding: 40px;
+  }
+  &__form-top {
+    .upload-name {
+      width: 150px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+      display: flex;
+      .form-require {
+        color: white;
+        background: #3ccace;
+        font-size: 12px;
+        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        padding: 0 4px;
+        margin: 0 0 0 8px;
+      }
+      .form-require-sub {
+        color: white;
+        background: #bfbfbf;
+        font-size: 12px;
+        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        padding: 0 4px;
+        margin: 0 0 0 8px;
+      }
+    }
+  }
+  .form-coment {
+    margin-top: 16px;
+    color: #333333;
+    font-size: 14px;
+  }
+  .dropbox-container {
+    margin-top: 16px;
+    background-color: #F5F5F5;
+    align-items: center;
+    border-style: dashed;
+    border-color: rgb(206, 205, 205);
+    border-width: thin;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    .container-image {
+      cursor: pointer;
+      .container-icon {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        display: none;
+      }
+    }
+    .container-coment {
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.4em;
+    }
+  }
+  .style-top-line {
+    border-top-width: 1px;
+    border-top-color: #f5f5f5;
+    border-left: 0 solid #f5f5f5;
+    border-bottom: 0 solid #f5f5f5;
+    border-right: 0 solid #f5f5f5;
+    border-top-style: solid;
+    margin: 0;
+  }
+    .text-field {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: inherit;
+      height: 48px;
+      margin: 16px 0 30px;
+      outline: none;
+      padding: 0 16px;
+      width: 100%;
+    }
+    .text-area {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #222;
+      font-size: 16px;
+      margin: 0;
+      outline: none;
+      padding: 13px 16px;
+      resize: vertical;
+      vertical-align: middle;
+      width: 100%;
+      height: 150px;
+      margin-top: 16px;
+    }
+    .hoge {
+      color: rgb(136, 136, 136);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4em;
+      margin-bottom: 30px;
+    }
+      .select-details {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: inherit;
+        height: 48px;
+        margin: 16px 0 30px;
+        outline: none;
+        padding: 0 16px;
+        width: 100%;
+        background-color: white;
+      }
+      .price-field {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 0px 12px;
+        align-items: center;
+        .price-require {
+          color: white;
+          background: #3ccace;
+          font-size: 12px;
+          font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          padding: 0 4px;
+          margin: 0 0 0 8px;
+        }
+        .number-price {
+          display: flex;
+          align-items: center;
+          .upload-place {
+            padding-right: 8px;
+          }
+          .number-field {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            height: 48px;
+            outline: none;
+            padding: 0 16px;
+            width: 100%;
+            background-color: white;
+          }
+        }
+      }
+      .commission {
+        padding: 12px 0px;
+        font-size: 14px;
+        color: #333333;
+      }
+      .style-bottom-line {
+        border-top-width: 1px;
+        border-top-color: #efefef;
+        border-left: 0 solid #efefef;
+        border-bottom: 0 solid #efefef;
+        border-right: 0 solid #efefef;
+        border-top-style: solid;
+        margin: 10px 0px;
+      }
+      .submit-place {
+        margin-top: 40px;
+        display: block;
+        text-align: center;
+        .submit {
+          padding: 0px 24px;
+          margin: 0 0 24px;
+          background-color: #3CCACE;
+          color: white;
+          font-weight: bold;
+          border-radius: 4px;
+          font-size: 17px;
+          width: 360px;
+          min-height: 50px;
+          border-style: none;
+        }
+        a {
+          text-decoration: none;
+          color: #0095ee;;
+        }
+      }
+
+}
