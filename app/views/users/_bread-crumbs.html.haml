@@ -1,0 +1,11 @@
+%nav.bread-crumbs
+  %ul
+    %li
+      = link_to root_path do
+        %span
+        メルカリ
+      = icon('fas', 'chevron-right',class: 'icon-arrow-right')
+    %li.last-list
+      %span
+        =current_user.nickname
+
