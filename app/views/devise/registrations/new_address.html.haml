@@ -1,0 +1,44 @@
+= render "fixed-bar/header"
+%h2 住所情報登録
+= form_for @address do |f|
+  = render "devise/shared/error_messages", resource: @address
+  .field
+    = f.label :名字
+    %br/
+    = f.text_field :first_name, autofocus: true
+  .field
+    = f.label :名前
+    %br/
+    = f.text_field :last_name, autofocus: true
+  .field
+    = f.label :名字（フリガナ）
+    %br/
+    = f.text_field :first_name_kana, autofocus: true
+  .field
+    = f.label :名前（フリガナ）
+    %br/
+    = f.text_field :last_name_kana, autofocus: true
+  .field
+    = f.label :郵便番号
+    %br/
+    = f.text_field :zipcode, autofocus: true
+  .field
+    = f.label :都道府県
+    %br/
+    = f.collection_select :area_id, Area.all, :id, :name, autofocus: true
+  .field
+    = f.label :市区町村
+    %br/
+    = f.text_field :city, autofocus: true
+  .field
+    = f.label :番地
+    %br/
+    = f.text_field :address, autofocus: true
+  .field
+    = f.label :建物名（任意）
+    %br/
+    = f.text_field :bulding
+  .actions
+    = f.submit "Sign up"
+= render "fixed-bar/footer"
+-# = render "devise/shared/links"
