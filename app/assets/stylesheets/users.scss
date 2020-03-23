@@ -179,3 +179,27 @@
       }
   }
 }
+
+.logout-container{
+  // margin: 24px auto 0;
+  padding: 40px 380px;
+  background: #f5f5f5;
+  .logout-content{
+    background: #fff;
+    width: 700px;
+    height: 179px;
+    .logout-single-content{
+      padding-top: 67px;
+      .logout-button{
+      display: block;
+      border: 1px solid #888;
+      background: #3CCACE;
+      color: #fff;
+      width: 50%;
+      line-height: 48px;
+      font-size: 14px;
+      margin: 0 auto;
+      }
+    }
+  }
+}
