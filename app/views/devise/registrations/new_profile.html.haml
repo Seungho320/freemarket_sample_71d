@@ -1,0 +1,37 @@
+= render "fixed-bar/header"
+.signUp_main
+  .signUp_main__form
+    .signUp_main__form__header
+      本人確認情報登録
+    .signUp_main__form__contents
+      = form_for @profile do |f|
+        = render "devise/shared/error_messages", resource: @profile
+        .field
+          = f.label :名字
+          %em 必須
+          %br/
+          = f.text_field :first_name, autofocus: true
+        .field
+          = f.label :名前
+          %em 必須
+          %br/
+          = f.text_field :last_name, autofocus: true
+        .field
+          = f.label :名字（フリガナ）
+          %em 必須
+          %br/
+          = f.text_field :first_name_kana, autofocus: true
+        .field
+          = f.label :名前（フリガナ）
+          %em 必須
+          %br/
+          = f.text_field :last_name_kana, autofocus: true
+        .field
+          = f.label :生年月日
+          %em 必須
+          %br/
+          = f.text_field :birthday, autofocus: true
+        .actions
+          = f.submit "新規登録"
+= render "fixed-bar/footer"
+-# = render "devise/shared/links"
