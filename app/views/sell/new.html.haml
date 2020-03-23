@@ -41,7 +41,7 @@
         %span.form-require
           必須
       = form_for '/' do |f|
-        = f.select :details,[["レディース",1],["メンズ",2],["ベビー・キッズ",3],["インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ",8],["スポーツ・レジャー",9],["ハンドメイド",10],["チケット",11],["自転車・オートバイ",12],["その他",13]],{}, prompt: "選択してください",class: 'select-details'
+        = f.collection_select :select, Categories.all, :id, :name, prompt: "選択してください"
       %h3.upload-name
         ブランド
         %span.form-require-sub 
@@ -53,7 +53,7 @@
         %span.form-require
           必須
       = form_for '/' do |f|
-        = f.select :details,[["新品、未使用",1],["未使用に近い",2],["目立った傷や汚れ無し",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",6]],{}, prompt: "選択してください",class: 'select-details'
+        = f.collection_select :select, Item_condition.all, :id, :value, prompt: "選択してください"
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
@@ -64,13 +64,13 @@
         %span.form-require
           必須
       = form_for '/' do |f|
-        = f.select :details,[],{}, prompt: "選択してください",class: 'select-details'
+        = f.collection_select :select, Area.all, :id, :name, prompt: "選択してください"
       %h3.upload-name
         発送までの日数
         %span.form-require
           必須
       = form_for '/' do |f|
-        = f.select :details,[["1~2日で発送",1],["2~3日で発送",2],["4~7日で発送",3]],{}, prompt: "選択してください",class: 'select-details'
+        = f.collection_select :select, Send_days.all, :id, :value, prompt: "選択してください"
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
