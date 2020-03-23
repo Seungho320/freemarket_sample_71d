@@ -30,11 +30,39 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    @user.save
-    sign_in(:user, @user)
+    session["address"] = @address.attributes
+    @profile = @user.build_profile
+    render :new_profile
   end
 
+  def create_profile
+    @user = User.new(session["devise.regist_data"]["user"])
+    @address = Address.new(session["address"])
+    @profile = Profile.new(profile_params)
+    unless @profile.valid?
+      flash.now[:alert] = @profile.errors.full_messages
+      render :new_profile and return
+    end
+    @user.build_address(@address.attributes)
+    @user.build_profile(@profile.attributes)
+    @user.save
+    sign_in(:user, @user)
+    redirect_to root_path
+  end
 
+protected
+
+  def address_params
+    params.require(:address).permit(:first_name,:last_name, :first_name_kana, :last_name_kana, :zipcode,:area_id, :city, :address, :bulding)
+  end
+
+  def profile_params
+    params.require(:profile).permit(:first_name,:last_name, :first_name_kana, :last_name_kana, :birthday)
+  end
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
   # GET /resource/edit
   # def edit
   #   super
@@ -59,15 +87,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
-
-  def address_params
-    params.require(:address).permit(:first_name,:last_name, :first_name_kana, :last_name_kana, :zipcode,:area_id, :city, :address, :bulding)
-  end
-
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  end
+  
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
