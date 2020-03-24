@@ -1,0 +1,22 @@
+.card-container
+  %h1.card-information-input クレジットカード情報入力
+  .from-container
+    = form_for '/' do |f|
+      .form-container
+        %label.topname カード番号
+        %span.form-require 必須
+        %br
+        = f.text_field :number, class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        %br
+        %label.topname 有効期限
+        %span.form-require 必須
+        %br
+        = f.select :mounth,[["--",1],["01",2],["02",3],["03",4],["04",5],["05",6],["06",7],["07",8],["08",9],["09",10],["10",11],["11",12],["12",13]],{}, class: 'select-details'
+        %span 月
+        = f.select :year,[["--",1],["20",2],["21",3],["22",4],["23",5],["24",6],["25",7],["26",8],["27",9],["28",10],["29",11],["30",12],["31",13]],{}, class: 'select-details'
+        %span 年
+        %br
+        %laber.topname セキュリティーコード
+        %span.form-require 必須
+        = f.text_field :number, class: "number", placeholder: "カード背面4行もしくは3行の番号" ,maxlength: "4", type: "text", id: "card_number"
+        = f.submit '追加する', class: 'submit'
