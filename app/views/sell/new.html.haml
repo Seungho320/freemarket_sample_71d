@@ -45,7 +45,7 @@
             ブランド
             %span.form-require-sub 
               任意
-          = f.text_field :brand_id, class: 'text-field', placeholder: '例）シャネル'
+          = f.collection_select :brand_id, Brands.all, :id, :name, prompt: "選択してください"
           %h3.upload-name
             商品の状態
             %span.form-require
