@@ -10,27 +10,27 @@
     .dropbox-container
       = form_for '/' do |f|
         = f.label :image, class: 'container-image' do
-          = icon('fas','camera', class:'container-icon') 
+          = icon('fas','camera', class:'container-icon')
           = f.file_field :image, class: 'image-file'
         %h3.container-coment
           ドラッグアンドドロップ
-          %br 
+          %br
             またはクリックしてファイルをアップロード
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
       %h3.upload-name
         商品名
-        %span.form-require  
+        %span.form-require
           必須
-      = form_for '/' do |f|
+      = form_for @item do |f|
         = f.text_field :name, class: 'text-field', placeholder: '40文字まで'
       %h3.upload-name
         商品の説明
         %span.form-require
           必須
-      = form_for '/' do |f|
-        = f.text_area :description, class: 'text-area', placeholder: '商品の説明は(必須1,000文字以内)'
+      = form_for @item do |f|
+        = f.text_area :text, class: 'text-area', placeholder: '商品の説明は(必須1,000文字以内)'
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
@@ -40,20 +40,20 @@
         カテゴリー
         %span.form-require
           必須
-      = form_for '/' do |f|
-        = f.collection_select :select, Categories.all, :id, :name, prompt: "選択してください"
+      = form_for @item do |f|
+        = f.collection_select :category_id, Categories.all, :id, :name, prompt: "選択してください"
       %h3.upload-name
         ブランド
         %span.form-require-sub 
           任意
-      = form_for '/' do |f|
-        = f.text_field :details, class: 'text-field', placeholder: '例）シャネル'
+      = form_for @item do |f|
+        = f.text_field :brand_id, class: 'text-field', placeholder: '例）シャネル'
       %h3.upload-name
         商品の状態
         %span.form-require
           必須
-      = form_for '/' do |f|
-        = f.collection_select :select, Item_condition.all, :id, :value, prompt: "選択してください"
+      = form_for @item do |f|
+        = f.collection_select :item_condition_id, Item_condition.all, :id, :value, prompt: "選択してください"
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
@@ -63,14 +63,14 @@
         発送元の地域
         %span.form-require
           必須
-      = form_for '/' do |f|
-        = f.collection_select :select, Area.all, :id, :name, prompt: "選択してください"
+      = form_for @item do |f|
+        = f.collection_select :area_id, Area.all, :id, :name, prompt: "選択してください"
       %h3.upload-name
         発送までの日数
         %span.form-require
           必須
-      = form_for '/' do |f|
-        = f.collection_select :select, Send_days.all, :id, :value, prompt: "選択してください"
+      = form_for @item do |f|
+        = f.collection_select :send_days_id, Send_days.all, :id, :value, prompt: "選択してください"
   .style-top-line
   .sell-main__form-box
     .sell-main__form-top
@@ -84,15 +84,15 @@
         .number-price
           %h3.upload-place
             ¥
-          = form_for '/' do |f|
-            = f.number_field :place, class: 'number-field', min: '300', max: '9,999,999'
+          = form_for @item do |f|
+            = f.number_field :price, class: 'number-field', min: '300', max: '9,999,999'
       %h3.commission
         販売手数料（10%）
       .style-bottom-line
       %h3.commission
         販売利益
       .submit-place
-        = form_for '/' do |f|
+        = form_for @item do |f|
           = f.submit '出品する', class: 'submit'
         = link_to 'もどる', '#', class: 'return'
 = render "fixed-bar/footer"
