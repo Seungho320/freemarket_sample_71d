@@ -5,8 +5,9 @@ class SellController < ApplicationController
   end
 
   def create
-    @item = Item.new(params[:items])
+    @item = Item.new(item_params)
     @item.save
+    redirect_to root_path
   end
 
   private
