@@ -1,0 +1,45 @@
+= render "fixed-bar/header"
+.index-title-container
+  .index-title
+    商品一覧
+.index-main
+  .index-items-container
+    .index-items-category
+      レディース新着アイテム
+    .index-items-box
+      %ul.item-lists
+        .list-item-box
+          = link_to "/" ,class: "index-item-link" do
+            %li.item-list
+              .item-image-box  
+                = image_tag "material/pict/member_photo_noimage.png", class:"index-item-image" 
+              .item-info
+                .item-name
+                  = @item1.name
+                .item-price
+                  = @item1.price
+                  ¥
+        .list-item-box
+          = link_to "/" ,class: "index-item-link" do
+            %li.item-list
+              .item-image-box  
+                = image_tag "material/pict/member_photo_noimage.png", class:"index-item-image" 
+              .item-info
+                .item-name
+                  = @item2.name
+                .item-price
+                  = @item2.price
+                  ¥
+        .list-item-box
+          = link_to "/" ,class: "index-item-link" do
+            %li.item-list
+              .item-image-box  
+                = image_tag "material/pict/member_photo_noimage.png", class:"index-item-image" 
+              .item-info
+                .item-name
+                  = @item3.name
+                .item-price
+                  = @item3.price
+                  ¥
+        
+        
