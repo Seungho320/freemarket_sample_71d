@@ -1,25 +1,23 @@
 = render "fixed-bar/header"
 .sell-main
   .sell-main__form-box
-    .sell-main__form-top
-      %h3.upload-name
-        出品画像
-        %span.form-require 
-          必須
-    %p.form-coment 最大10枚までアップロードできます。
-    .dropbox-container
-      = form_for '/' do |f|
+    = form_for @item, url: sell_index_path do |f|
+      .sell-main__form-top
+        %h3.upload-name
+          出品画像
+          %span.form-require 
+            必須
+      %p.form-coment 最大10枚までアップロードできます。
+      .dropbox-container
         = f.label :image, class: 'container-image' do
           = icon('fas','camera', class:'container-icon')
           = f.file_field :image, class: 'image-file'
-        %h3.container-coment
-          ドラッグアンドドロップ
-          %br
-            またはクリックしてファイルをアップロード
-  .style-top
-    = form_for @item, url: sell_index_path do |f|
+          %h3.container-coment
+            ドラッグアンドドロップ
+            %br
+              またはクリックしてファイルをアップロード
       .style-top-line
-      .sell-main__form-box
+      .sell-main__form-box2
         .sell-main__form-top
           %h3.upload-name
             商品名
@@ -32,7 +30,7 @@
               必須
           = f.text_area :text, class: 'text-area', placeholder: '商品の説明は(必須1,000文字以内)'
       .style-top-line
-      .sell-main__form-box
+      .sell-main__form-box2
         .sell-main__form-top
           %h3.hoge
             商品詳細
@@ -52,7 +50,7 @@
               必須
           = f.collection_select :item_condition_id, Item_condition.all, :id, :value, prompt: "選択してください"
       .style-top-line
-      .sell-main__form-box
+      .sell-main__form-box2
         .sell-main__form-top
           %h3.hoge
             配送について
@@ -67,7 +65,7 @@
               必須
           = f.collection_select :send_days_id, Send_days.all, :id, :value, prompt: "選択してください"
       .style-top-line
-      .sell-main__form-box
+      .sell-main__form-box2
         .sell-main__form-top
           %h3.hoge
             価格（¥300~9,999,999）
