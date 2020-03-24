@@ -44,10 +44,7 @@ Things you may want to cover:
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|phone number|intger|null: false, unique: true|
-|birthday_yy|date|null: false|
-|birthday_mm|date|null: false|
-|birthday_dd|date|null: false|
+|birthday|date|null: false|
 |icon|text||
 |intoroduction|text||
 |user_id|references|null: false, foreign_key: true|
@@ -61,9 +58,13 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## addressesテーブル
+## addresseテーブル
 |Column|Type|Options|
 |------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |area_id|references|null: false, foreign_key: true|
 |city|string|null: false|
 |address|string|null: false|
@@ -81,12 +82,12 @@ Things you may want to cover:
 |price|integer|null: false|
 |seller-id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-|brand_id|references|foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
-|item_condition_id|references|null: false, foreign_key: true|
-|area_id|references|null: false, foreign_key: true|
-|send_days_id|references|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|size_id|integer|null: false, foreign_key: true|
+|item_condition_id|integer|null: false, foreign_key: true|
+|area_id|integer|null: false, foreign_key: true|
+|send_days_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
@@ -106,31 +107,9 @@ Things you may want to cover:
 ### Association
 - belongs_to :item
 
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|ancestry|string|null: false|
-### Association
-- has_many :items
-
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-### Association
-- has_many :items
-
-## sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-### Association
-- has_many :items
-
-## item_conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_condition|string|null: false|
 ### Association
 - has_many :items
