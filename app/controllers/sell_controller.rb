@@ -5,10 +5,10 @@ class SellController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
-    redirect_to root_path
+    @item = Item.new(params[:items])
+    @item.save
   end
-  
+
   private
   def item_params
     params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id)
