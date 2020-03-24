@@ -12,6 +12,22 @@
 
 ActiveRecord::Schema.define(version: 20200323100611) do
 
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "first_name",                    null: false
+    t.string   "last_name",                     null: false
+    t.string   "first_name_kana",               null: false
+    t.string   "last_name_kana",                null: false
+    t.integer  "zipcode",                       null: false
+    t.integer  "area_id"
+    t.text     "city",            limit: 65535, null: false
+    t.text     "address",         limit: 65535, null: false
+    t.text     "bulding",         limit: 65535
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "text",              limit: 65535
@@ -28,22 +44,6 @@ ActiveRecord::Schema.define(version: 20200323100611) do
     t.datetime "updated_at",                      null: false
     t.index ["buyer_id_id"], name: "index_items_on_buyer_id_id", using: :btree
     t.index ["seller_id_id"], name: "index_items_on_seller_id_id", using: :btree
-  end
-  
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",                    null: false
-    t.string   "last_name",                     null: false
-    t.string   "first_name_kana",               null: false
-    t.string   "last_name_kana",                null: false
-    t.integer  "zipcode",                       null: false
-    t.integer  "area_id"
-    t.text     "city",            limit: 65535, null: false
-    t.text     "address",         limit: 65535, null: false
-    t.text     "bulding",         limit: 65535
-    t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
