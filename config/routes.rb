@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   root 'toppage#index'
-  resources :sell, only: [:new, :create]
+  resources :sell, only: [:index, :new, :create]
   resources :users, only: [:show, :new]
 end
   

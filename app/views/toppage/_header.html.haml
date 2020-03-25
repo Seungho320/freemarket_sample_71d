@@ -37,7 +37,7 @@
                                   = sub_sub.name
           %li.toppage-header-top__footer-search-brand
             %h2
-              = link_to root_path do
+              = link_to sell_index_path do
                 = icon('fas', 'tag lg', alt: 'tag-icon',
                 style: 'color:#0095ee', class: 'toppage-header-top__footer-search-brand--icon')
                 %span 全商品一覧
@@ -48,8 +48,6 @@
               = link_to 'マイページ', user_path(current_user)
             .toppage-header-top__footer-contents--user-login-btn
               = link_to 'ログアウト', new_user_path
-            -# = link_to new_user_path, class: "meny_link" do
-            -#   ログアウト
         - else
           .toppage-header-top__footer-contents-wrapper
             .toppage-header-top__footer-contents--new-register-btn

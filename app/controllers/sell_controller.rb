@@ -1,5 +1,7 @@
 class SellController < ApplicationController
-
+  def index
+    @items = Item.all
+  end
   def new
     if user_signed_in?
       @item = Item.new
