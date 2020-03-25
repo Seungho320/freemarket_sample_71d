@@ -36,8 +36,9 @@
         = link_to root_path do
           = icon('fab','line',class: 'line-icon') 
   %section.card-set-box-container
-    .card-set-content
-      .card-set-single-content
-        = form_for '/' do |f|
-          = link_to root_path do
-            = f.submit 'カード登録',class:"card-set-button"
+    .card-set-button
+      = link_to root_path do
+        .card-set-content
+          カード登録
+        
+            
