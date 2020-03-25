@@ -186,12 +186,12 @@ li.first-category {
   width: 224px;
   padding: 0 16px;
   &.active-list {
-    background-color: $red;
+    background-color: $sky_blue;
     color: $white;
     opacity: 1;
     }
   &:hover {
-    background-color: $red;
+    background-color: $sky_blue;
     color: $white;
     opacity: 1;
     }
@@ -284,74 +284,3 @@ li.first-category {
     width: 1020px;
   }
 }
-// .main_header {
-//   width: 100%;
-//   .header {
-//     width: 1020px;
-//     margin: 0 auto;
-//     padding: 8px 0 0;
-//     &__top {
-//       display: flex;
-//       justify-content: space-between;
-//       &__logo {
-//         height: 40px;
-//         margin-right: 45px;
-//         .logo-svg {
-//           height: 36px;
-//           width: 134px;
-//         }
-//       }
-//       &__form {
-//         width: 100%;
-//         position: relative;
-//         &__input {
-//           input {
-//             width: 100%;
-//             height: 40px;
-//             border-radius: 4px;
-//             font-size: 16px;
-//             line-height: 40px;
-//             padding: 0 40px 0 10px;
-//           }
-//         }
-//         &__btn {
-//           background-color: skyblue;
-//           position: absolute;
-//           top:0px;
-//           right: 0px;
-//           button {
-//             height: 40px;
-//             width: 40px;
-//             cursor: pointer;
-//             font-size: 16px;
-//             background:none;
-//             border: none;
-//             padding: 6px 11px;
-//           }
-//         }
-//       }
-//     }
-//     &__meny {
-//       &__nav {
-//         margin: 10px 0;
-//         display: flex;
-//         .meny_link {
-//           color: black;
-//           font-size: 14px;
-//         }
-//         .listsLeft {
-//           &__item {
-//             padding-right: 30px;
-//           }
-//         }
-//         .listsRight {
-//           display: flex;
-//           margin-left: auto;
-//           &__new {
-//             padding-left: 16px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
