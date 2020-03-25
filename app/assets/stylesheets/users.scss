@@ -41,7 +41,7 @@
   background: #f5f5f5;
   padding: 40px 380px;
   .users-ditail-profile-box{
-    background:url(material/pict/bg-appBanner-pict.jpg);
+    background:image-url('material/pict/bg-appBanner-pict.jpg');
     background-size: cover;
     padding-top: 50px;
     height: 273px;
@@ -59,7 +59,7 @@
           width: 180px;
           height: 180px;
           margin: 0 auto;
-          background-image:url(material/pict/member_photo_noimage.png);
+          background-image:image-url('material/pict/member_photo_noimage.png');
         }
         .users-ditail-title{
           margin: 8px 0 16px;
@@ -122,7 +122,6 @@
       }
     }
   }
-
 }
 .item-social-media-box{
   padding: 56px 0 24px;
@@ -178,9 +177,7 @@
       }
   }
 }
-
 .logout-container{
-  // margin: 24px auto 0;
   padding: 40px 380px;
   background: #f5f5f5;
   .logout-content{
@@ -201,4 +198,15 @@
       }
     }
   }
+}
+
+.card-set-box-container{
+  .card-set-button{
+    background-color: red;
+      width: 100px;
+      height: 30px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 40px;
+}
 }
