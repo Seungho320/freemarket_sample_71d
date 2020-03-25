@@ -218,13 +218,13 @@
       .item-lists{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        // justify-content: ;
         .list-item-box{
           width: 188px;
           // background-color: blue;
           background-color: white;
           height: 250px;
-          // margin: 10px;
+          margin: 5px;
           margin-bottom: 10px;
           .item-list{
             width: 100%;
