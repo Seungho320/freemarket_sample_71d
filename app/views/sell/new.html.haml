@@ -5,7 +5,7 @@
       .sell-main__form-top
         %h3.upload-name
           出品画像
-          %span.form-require 
+          %span.form-require
             必須
       %p.form-coment 最大10枚までアップロードできます。
       .dropbox-container
@@ -38,7 +38,7 @@
             カテゴリー
             %span.form-require
               必須
-          = f.collection_select :category_id, Categories.all, :id, :name, prompt: "選択してください"
+          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください"
           %h3.upload-name
             ブランド
             %span.form-require-sub 
