@@ -9,9 +9,9 @@
             必須
       %p.form-coment 最大10枚までアップロードできます。
       .dropbox-container
-        = f.label :image, class: 'container-image' do
+        = f.fields_for :item_imgs do |i|
           = icon('fas','camera', class:'container-icon')
-          = f.file_field :image, class: 'image-file'
+          = i.file_field :img, class: 'image-file'
           %h3.container-coment
             ドラッグアンドドロップ
             %br
