@@ -7,30 +7,30 @@
       = form_for @address do |f|
         = render "devise/shared/error_messages", resource: @address
         .field
-          = f.label :名字
+          = f.label :送付先名字
           %em 必須
           %br/
-          = f.text_field :first_name, autofocus: true
+          = f.text_field :first_name, autofocus: true, placeholder: '例) 山田'
         .field
-          = f.label :名前
+          = f.label :送付先名前
           %em 必須
           %br/
-          = f.text_field :last_name, autofocus: true
+          = f.text_field :last_name, autofocus: true, placeholder: '例) 彩'
         .field
-          = f.label :名字（フリガナ）
+          = f.label :送付先名字（フリガナ）
           %em 必須
           %br/
-          = f.text_field :first_name_kana, autofocus: true
+          = f.text_field :first_name_kana, autofocus: true, placeholder: '例) ヤマダ'
         .field
-          = f.label :名前（フリガナ）
+          = f.label :送付先名前（フリガナ）
           %em 必須
           %br/
-          = f.text_field :last_name_kana, autofocus: true
+          = f.text_field :last_name_kana, autofocus: true, placeholder: '例) アヤ'
         .field
           = f.label :郵便番号
           %em 必須
           %br/
-          = f.text_field :zipcode, autofocus: true
+          = f.text_field :zipcode, autofocus: true, placeholder: '例) 1150045'
         .field
           = f.label :都道府県
           %em 必須
