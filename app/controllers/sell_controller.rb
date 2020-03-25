@@ -3,7 +3,11 @@ class SellController < ApplicationController
     @items = Item.all
   end
   def new
-    @item = Item.new
+    if user_signed_in?
+      @item = Item.new
+    else
+      redirect_to(user_session_path)
+    end
   end
 
   def create
@@ -17,7 +21,7 @@ class SellController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id)
+    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id).merge(seller_id_id: current_user.id)
   end
 
 end
