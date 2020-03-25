@@ -11,7 +11,9 @@
       .dropbox-container
         = f.fields_for :item_imgs do |i|
           = icon('fas','camera', class:'container-icon')
-          = i.file_field :img, class: 'image-file'
+          .image-file_group{"data-index" => "#{i.index}"}
+            = i.file_field :img, class: 'image-file'
+            %span.js-remove 削除
           %h3.container-coment
             ドラッグアンドドロップ
             %br
