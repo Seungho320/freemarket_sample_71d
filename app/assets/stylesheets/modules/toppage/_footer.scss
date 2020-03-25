@@ -23,6 +23,9 @@
         li {
           display: list-item;
           text-align: -webkit-match-parent;
+          a:hover {
+            color: $sky_blue;
+          }
         }
       }
     }
