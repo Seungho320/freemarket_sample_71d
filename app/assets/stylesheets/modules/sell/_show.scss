@@ -1,0 +1,121 @@
+.itemDetails {
+  background: #f5f5f5;
+  padding: 40px;
+  &__box {
+    width: 700px;
+    background: #fff;
+    margin: auto;
+    &__name {
+      height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 24px;
+      line-height: 1;
+    }
+    &__wording {
+      width: 620px;
+      font-size: 14px;
+      color: #888;
+      line-height: 1.5;
+      margin: 8px auto 0;
+    }
+    &__main {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+      &__photo {
+        width: 300px;
+        height: 375px;
+        background: #f5f5f5;
+        margin-right: 16px;
+        .img1 {
+          width: 300px;
+          height: 300px;
+          background: darkgrey;
+        }
+        .img2 {
+          width: 60px;
+          height: 60px;
+          background: lightgray;
+        }
+      }
+      &__detail {
+        width: 299px;
+        height: 419px;
+        font-size: 14px;
+        border: 1px solid #f5f5f5;
+        th {
+          background: #fafafa;
+          border: 1px solid #f5f5f5;
+          padding: 8px;
+        }
+        td {
+          border: 1px solid #f5f5f5;
+          padding: 8px;
+          a {
+            width: 191px;
+            color: #0099e8;
+            text-decoration: none;
+            margin-bottom: 8px;
+          }
+          div {
+            display: flex;
+            .laugh {
+              color: #ef5185;
+              line-height: 1;
+            }
+            .meh {
+              color: #fba933;
+              line-height: 1;
+            }
+            .frown-open {
+              color: #6ab5d8;
+              line-height: 1;
+            }
+            .rating {
+              color: #000;
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+    &__buy {
+      width: 620px;
+      margin: 24px auto 0;
+      text-align: center;
+      .price {
+        font-size: 40px;
+        font-weight: bold;
+        margin-right: 16px;
+      }
+      .tax {
+        font-size: 10px;
+      }
+      .fee {
+        font-size: 16px;
+      }
+    }
+    a {
+      width: 620px;
+      display: block;
+      margin: auto;
+      .move {
+        width: 620px;
+        height: 60px;
+        background: #3ccace;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        margin-top: 16px;
+      }
+    }
+    &__description {
+      padding: 24px 40px 40px;
+      word-wrap:break-all;
+    }
+  }
+}

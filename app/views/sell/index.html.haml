@@ -10,7 +10,7 @@
       %ul.item-lists
         - @items.each do |item|
           .list-item-box
-            = link_to "/" ,class: "index-item-link" do
+            = link_to sell_path(item) ,class: "index-item-link" do
               %li.item-list
                 .item-image-box  
                   = image_tag "material/pict/member_photo_noimage.png", class:"index-item-image" 
@@ -18,5 +18,5 @@
                   .item-name
                     = item.name
                   .item-price
-                    = item.price
-                    ¥
+                    #{item.price} ¥
+                    
