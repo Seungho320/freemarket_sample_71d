@@ -1,6 +1,7 @@
 class CardController < ApplicationController
 
   require "payjp"
+  Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -8,7 +9,6 @@ class CardController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else

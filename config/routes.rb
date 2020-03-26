@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'toppage#index'
   resources :sell, only: :new
   resources :users, only: :show
-  resources :card, only: [:new, :show] do
+    resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
