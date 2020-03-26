@@ -14,7 +14,7 @@
             - if @item.persisted?
               - @item.item_imgs.each_with_index do |image, i|
                 = image_tag image.img.url, data: { index: i }, width: "100", height: '100'
-          .inputtt
+          .js-input
             = f.fields_for :item_imgs do |i|
               .image-file_group{"data-index" => "#{i.index}"}
                 = i.file_field :img, class: 'image-file'
