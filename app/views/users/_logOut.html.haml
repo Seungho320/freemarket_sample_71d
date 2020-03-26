@@ -1,0 +1,6 @@
+.logout-container
+  .logout-content
+    .logout-single-content
+      = form_for '/' do |f|
+        = link_to destroy_user_session_path, method: :delete, class: "meny_link" do
+          = f.submit 'ログアウト',class:"logout-button"

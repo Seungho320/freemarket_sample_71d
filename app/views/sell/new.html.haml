@@ -1,98 +1,89 @@
 = render "fixed-bar/header"
 .sell-main
   .sell-main__form-box
-    .sell-main__form-top
-      %h3.upload-name
-        出品画像
-        %span.form-require 
-          必須
-    %p.form-coment 最大10枚までアップロードできます。
-    .dropbox-container
-      = form_for '/' do |f|
-        = f.label :image, class: 'container-image' do
-          = icon('fas','camera', class:'container-icon') 
-          = f.file_field :image, class: 'image-file'
-        %h3.container-coment
-          ドラッグアンドドロップ
-          %br 
-            またはクリックしてファイルをアップロード
-  .style-top-line
-  .sell-main__form-box
-    .sell-main__form-top
-      %h3.upload-name
-        商品名
-        %span.form-require  
-          必須
-      = form_for '/' do |f|
-        = f.text_field :name, class: 'text-field', placeholder: '40文字まで'
-      %h3.upload-name
-        商品の説明
-        %span.form-require
-          必須
-      = form_for '/' do |f|
-        = f.text_area :description, class: 'text-area', placeholder: '商品の説明は(必須1,000文字以内)'
-  .style-top-line
-  .sell-main__form-box
-    .sell-main__form-top
-      %h3.hoge
-        商品詳細
-      %h3.upload-name
-        カテゴリー
-        %span.form-require
-          必須
-      = form_for '/' do |f|
-        = f.select :details,[["レディース",1],["メンズ",2],["ベビー・キッズ",3],["インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ",8],["スポーツ・レジャー",9],["ハンドメイド",10],["チケット",11],["自転車・オートバイ",12],["その他",13]],{}, prompt: "選択してください",class: 'select-details'
-      %h3.upload-name
-        ブランド
-        %span.form-require-sub 
-          任意
-      = form_for '/' do |f|
-        = f.text_field :details, class: 'text-field', placeholder: '例）シャネル'
-      %h3.upload-name
-        商品の状態
-        %span.form-require
-          必須
-      = form_for '/' do |f|
-        = f.select :details,[["新品、未使用",1],["未使用に近い",2],["目立った傷や汚れ無し",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",6]],{}, prompt: "選択してください",class: 'select-details'
-  .style-top-line
-  .sell-main__form-box
-    .sell-main__form-top
-      %h3.hoge
-        配送について
-      %h3.upload-name
-        発送元の地域
-        %span.form-require
-          必須
-      = form_for '/' do |f|
-        = f.select :details,[],{}, prompt: "選択してください",class: 'select-details'
-      %h3.upload-name
-        発送までの日数
-        %span.form-require
-          必須
-      = form_for '/' do |f|
-        = f.select :details,[["1~2日で発送",1],["2~3日で発送",2],["4~7日で発送",3]],{}, prompt: "選択してください",class: 'select-details'
-  .style-top-line
-  .sell-main__form-box
-    .sell-main__form-top
-      %h3.hoge
-        価格（¥300~9,999,999）
-      .price-field
+    = form_for @item, url: sell_index_path do |f|
+      .sell-main__form-top
         %h3.upload-name
-          販売価格
-          %span.price-require
+          出品画像
+          %span.form-require 
             必須
-        .number-price
-          %h3.upload-place
-            ¥
-          = form_for '/' do |f|
-            = f.number_field :place, class: 'number-field', min: '300', max: '9,999,999'
-      %h3.commission
-        販売手数料（10%）
-      .style-bottom-line
-      %h3.commission
-        販売利益
-      .submit-place
-        = form_for '/' do |f|
-          = f.submit '出品する', class: 'submit'
+      %p.form-coment 最大10枚までアップロードできます。
+      .dropbox-container
+        = f.label :image, class: 'container-image' do
+          = icon('fas','camera', class:'container-icon')
+          = f.file_field :image, class: 'image-file'
+          %h3.container-coment
+            ドラッグアンドドロップ
+            %br
+              またはクリックしてファイルをアップロード
+      .style-top-line
+      .sell-main__form-box2
+        .sell-main__form-top
+          %h3.upload-name
+            商品名
+            %span.form-require
+              必須
+          = f.text_field :name, class: 'text-field', placeholder: '40文字まで'
+          %h3.upload-name
+            商品の説明
+            %span.form-require
+              必須
+          = f.text_area :text, class: 'text-area', placeholder: '商品の説明は(必須1,000文字以内)'
+      .style-top-line
+      .sell-main__form-box2
+        .sell-main__form-top
+          %h3.hoge
+            商品詳細
+          %h3.upload-name
+            カテゴリー
+            %span.form-require
+              必須
+          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください"
+          %h3.upload-name
+            ブランド
+            %span.form-require-sub 
+              任意
+          = f.collection_select :brand_id, Brands.all, :id, :name, prompt: "選択してください"
+          %h3.upload-name
+            商品の状態
+            %span.form-require
+              必須
+          = f.collection_select :item_condition_id, Item_condition.all, :id, :value, prompt: "選択してください"
+      .style-top-line
+      .sell-main__form-box2
+        .sell-main__form-top
+          %h3.hoge
+            配送について
+          %h3.upload-name
+            発送元の地域
+            %span.form-require
+              必須
+          = f.collection_select :area_id, Area.all, :id, :name, prompt: "選択してください"
+          %h3.upload-name
+            発送までの日数
+            %span.form-require
+              必須
+          = f.collection_select :send_days_id, Send_days.all, :id, :value, prompt: "選択してください"
+      .style-top-line
+      .sell-main__form-box2
+        .sell-main__form-top
+          %h3.hoge
+            価格（¥300~9,999,999）
+          .price-field
+            %h3.upload-name
+              販売価格
+              %span.price-require
+                必須
+            .number-price
+              %h3.upload-place
+                ¥
+              = f.number_field :price, class: 'number-field', min: '300', max: '9,999,999'
+          %h3.commission
+            販売手数料（10%）
+          .style-bottom-line
+          %h3.commission
+            販売利益
+          .submit-place
+            = f.submit '出品する', class: 'submit'
         = link_to 'もどる', '#', class: 'return'
 = render "fixed-bar/footer"

@@ -1,0 +1,56 @@
+= render "header_address"
+.signUp_main
+  .signUp_main__form
+    .signUp_main__form__header
+      住所情報登録
+    .signUp_main__form__contents
+      = form_for @address do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .field
+          = f.label :送付先名字
+          %em 必須
+          %br/
+          = f.text_field :first_name, autofocus: true, placeholder: '例) 山田'
+        .field
+          = f.label :送付先名前
+          %em 必須
+          %br/
+          = f.text_field :last_name, autofocus: true, placeholder: '例) 彩'
+        .field
+          = f.label :送付先名字（フリガナ）
+          %em 必須
+          %br/
+          = f.text_field :first_name_kana, autofocus: true, placeholder: '例) ヤマダ'
+        .field
+          = f.label :送付先名前（フリガナ）
+          %em 必須
+          %br/
+          = f.text_field :last_name_kana, autofocus: true, placeholder: '例) アヤ'
+        .field
+          = f.label :郵便番号
+          %em 必須
+          %br/
+          = f.text_field :zipcode, autofocus: true, placeholder: '例) 1150045'
+        .field
+          = f.label :都道府県
+          %em 必須
+          %br/
+          = f.collection_select :area_id, Area.all, :id, :name, autofocus: true, prompt: "選択してください"
+        .field
+          = f.label :市区町村
+          %em 必須
+          %br/
+          = f.text_field :city, autofocus: true
+        .field
+          = f.label :番地
+          %em 必須
+          %br/
+          = f.text_field :address, autofocus: true
+        .field
+          = f.label :建物名（任意）
+          %br/
+          = f.text_field :bulding
+        .actions
+          = f.submit "次へ"
+= render "fixed-bar/footer"
+-# = render "devise/shared/links"

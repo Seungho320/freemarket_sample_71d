@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, uniqueness: true
-  has_many :toppage
+  has_one :address
+  has_one :profile
+  has_many :seller_id, class_name: "Item", foreign_key: "seller_id_id"
+  has_many :buyer_id, class_name: "Item", foreign_key: "buyer_id_id"
 end
