@@ -1,45 +1,41 @@
-%section.user-ditails
-  .users-ditail-profile-box
-    .users-ditail-photo-box
-      = link_to user_path(current_user), class:"user-ditails-link" do
-        .users-ditail-photo
-        %h2.users-ditail-title
-          =current_user.nickname
-      .users-ditail-score
-        %span.users-ditail-score__valuation
-          評価 0
-        %span.users-ditail-score__quantity
-          出品数 0
-  .white
-    .users-detail-ratings-box
-      .users-detail-ratings
-        = icon('fas','laugh', class: 'laugh')
-        .users-detail-ratings-score
-          0
-      .users-detail-ratings
-        = icon('fas','meh', class: 'nomal')
-        .users-detail-ratings-score
-          0
-      .users-detail-ratings
-        = icon('fas','frown', class: 'bad')
-        .users-detail-ratings-score
-          0
+.user-ditails-container
+  %section.user-ditails
+    .users-ditail-profile-box
+      .users-ditail-photo-box
+        = link_to user_path(current_user), class:"user-ditails-link" do
+          .users-ditail-photo
+          %h2.users-ditail-title
+            =current_user.nickname
+        .users-ditail-score
+          %span.users-ditail-score__valuation
+            評価 0
+          %span.users-ditail-score__quantity
+            出品数 0
+    .white
+      .users-detail-ratings-box
+        .users-detail-ratings
+          = icon('fas','laugh', class: 'laugh')
+          .users-detail-ratings-score
+            0
+        .users-detail-ratings
+          = icon('fas','meh', class: 'nomal')
+          .users-detail-ratings-score
+            0
+        .users-detail-ratings
+          = icon('fas','frown', class: 'bad')
+          .users-detail-ratings-score
+            0
+      
+    .item-social-media-box
+      %ul.social-media-box
+        %li.facebook
+          = link_to root_path do
+            = icon('fab','facebook-square',class: 'facebook-icon')
+        %li.twitter
+          = link_to root_path do
+            = icon('fab','twitter-square',class: 'twitter-icon')
+        %li.line
+          = link_to root_path do
+            = icon('fab','line',class: 'line-icon') 
     
-  .item-social-media-box
-    %ul.social-media-box
-      %li.facebook
-        = link_to root_path do
-          = icon('fab','facebook-square',class: 'facebook-icon')
-      %li.twitter
-        = link_to root_path do
-          = icon('fab','twitter-square',class: 'twitter-icon')
-      %li.line
-        = link_to root_path do
-          = icon('fab','line',class: 'line-icon') 
-  %section.card-set-box-container
-    .card-set-button
-      = link_to root_path do
-        .card-set-content
-          カード登録
-        
-            
+              
