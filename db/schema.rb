@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20200324080433) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_imgs_on_item_id", using: :btree
   end
+  
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id"
+    t.string   "card_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"

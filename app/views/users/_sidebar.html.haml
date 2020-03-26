@@ -1,0 +1,37 @@
+.sidebar-container
+  .sidebar-container-nav
+    %ul.sidebar-container-nav__container
+      %li.sidebar-container-nav__list-white
+        = link_to "#",class: "side-link" do
+          マイページ
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+      %li.sidebar-container-nav__list
+        = link_to "#" do
+          出品する
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+      %li.sidebar-container-nav__list
+        = link_to "#" do
+          出品した商品-出品中
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+      %li.sidebar-container-nav__list
+        = link_to "#" do
+          出品した商品-売却済み
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+      %li.sidebar-container-nav__list
+        = link_to "#" do
+          購入した商品-取引中
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+    %h2.sidebar-container-nav__head-name
+      設定
+    %ul.sidebar-container-nav__container
+      %li.sidebar-container-nav__list
+        = link_to new_card_path do
+          支払い方法
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+      %li.sidebar-container-nav__list
+        = link_to new_user_path do
+          ログアウト
+          = icon('fas,' 'fa-angle-right',class:'list-icon')
+
+
+

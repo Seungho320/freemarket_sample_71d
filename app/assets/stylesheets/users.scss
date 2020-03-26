@@ -1,6 +1,11 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  display: flex;
+}
+
+
 .bread-crumbs{
   position: relative;
   border-top: 1px solid #eee;
@@ -37,15 +42,18 @@
     }
   }
 }
+.user-ditails-container{
+  text-align: center;
+}
 .user-ditails{
   background: #f5f5f5;
-  padding: 40px 380px;
+  width: 700px;
+  margin: 40px auto;
   .users-ditail-profile-box{
-    background:url(material/pict/bg-appBanner-pict.jpg);
+    background:image-url('material/pict/bg-appBanner-pict.jpg');
     background-size: cover;
     padding-top: 50px;
     height: 273px;
-    width: 700px;
     .users-ditail-photo-box{
       text-align: center;
       .user-ditails-link{
@@ -59,14 +67,13 @@
           width: 180px;
           height: 180px;
           margin: 0 auto;
-          background-image:url(material/pict/member_photo_noimage.png);
+          background-image:image-url('material/pict/member_photo_noimage.png');
         }
         .users-ditail-title{
           margin: 8px 0 16px;
           font-size: 18px;
           font-weight: 400;
           color: #333;
-          width: 700px;
           height: 25px;
         }
       }
@@ -90,7 +97,6 @@
 .white{
   width: 700px;
   height: 50px;
-  background-color: #fff;
   .users-detail-ratings-box{
     display: flex;
     justify-content: center;
@@ -122,12 +128,10 @@
       }
     }
   }
-
 }
 .item-social-media-box{
   padding: 56px 0 24px;
   width: 700px;
-  background-color: #fff;
   .social-media-box{
     margin: 16px 0 0;
     text-align: center;
@@ -178,9 +182,7 @@
       }
   }
 }
-
 .logout-container{
-  // margin: 24px auto 0;
   padding: 40px 380px;
   background: #f5f5f5;
   .logout-content{
@@ -200,5 +202,62 @@
       margin: 0 auto;
       }
     }
+  }
+}
+
+.card-set-box-container{
+  .card-set-button{
+    background-color: red;
+      width: 100px;
+      height: 30px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 40px;
+}
+}
+
+.sidebar-container{
+  float: left;
+  width: 230px;
+  top: 232px;
+  position: absolute;
+  margin-left: 55px;;
+  .sidebar-container-nav {
+    text-align: center;
+    &__container {
+      border: 1px solid #eee;
+      background-color: #fff;
+      margin-bottom: 30px;
+    }
+    &__list-white {
+      border: 1px solid #eee;
+      background-color:#3CCACE;
+      color: white;
+      cursor: pointer;
+      padding:5px 10px;
+      text-align: left;
+      a:hover {
+        color: white;
+      }
+    }
+    &__list {
+      border: 1px solid #eee;
+      cursor: pointer;
+      padding:5px 10px;
+      text-align: left;
+      a:hover {
+        color: $sky_blue;
+      }
+    }
+    &__head-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+  a {
+    color: black;
+    text-decoration: none;
   }
 }

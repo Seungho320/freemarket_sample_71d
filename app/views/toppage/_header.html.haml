@@ -1,34 +1,56 @@
-%header.main_header
-  .header
-    .header__top
-      .header__top__logo
+%header.toppage-header-wrapper
+  .toppage-header-top
+    .toppage-header-top__header
+      .toppage-header-top__header-contents
         = link_to root_path do
-          = image_tag "material/logo/logo.png", class: "logo-svg"
-      .header__top__form
-        %form
-          .header__top__form__input
-            %input{:name => "keyword", :placeholder => "キーワードで探す", :type => "search", :value => ""}/
-          .header__top__form__btn
-            %button
-              = image_tag "material/icon/icon-search 1.png"
-    .header__meny
-      %nav.header__meny__nav
-        %ul.listsLeft
-          %li.listsLeft__item
-            = link_to root_path, class: "meny_link" do
-              全ての商品
-        %ul.listsRight
-          - if user_signed_in?
-            %li.header__menu__login
-              = link_to user_path(current_user), class: "meny_link" do
-                マイページ
-            %li.listsRight__new
-              = link_to destroy_user_session_path, method: :delete, class: "meny_link" do
-                ログアウト
-          - else
-            %li.listsRight__login
-              = link_to new_user_session_path, class: "meny_link" do
-                ログイン
-            %li.listsRight__new
-              = link_to new_user_registration_path, class: "meny_link" do
-                新規会員登録
+          = image_tag 'material/logo/logo.png', alt: 'mercari-logo',
+          class: 'toppage-header-top__header-contents--mercari-logo'
+        .toppage-header-top__header-search
+          %form{ action: '/', method: 'post' }
+            %input{ name: 'seach', class: 'toppage-header-top__header-search--search-form',
+            placeholder: '何かお探しですか？' }
+          .toppage-header-top__header-search--search-btn
+            = icon('fas', 'search', alt: 'search-icon',
+            class: 'toppage-header-top__header-search--search-btn')
+    .toppage-header-top__footer
+      %nav.toppage-header-top__footer-search
+        %ul.toppage-header-top__footer-search-categories
+          %li.toppage-header-top__footer-search-wrapper
+            %h2
+              = link_to root_path do
+                = icon('fas', 'list-ul lg',
+                alt: 'list-icon', style: 'color:#0095ee')
+                %span.toppage-header-top__footer-search-text カテゴリーから探す
+            %ul.first-category__wrapper
+              - @main_category.each do |category|
+                %li.first-category{data: {category: {id: category.id, sub: category.sub, sub_sub: category.sub_sub}}}
+                  %div
+                    = category.name
+                    %ul.second-category__wrapper
+                      - @categories.each do |sub|
+                        %li.second-category{data: {category: {id: category.id, sub: category.sub, sub_sub: category.sub_sub}}}
+                          %div
+                            = sub.name
+                            %ul.third-category__wrapper
+                              - @sub_sub_category.each do |sub_sub|
+                                %li.third-category{data: {category: {id: category.id, sub: category.sub, sub_sub: category.sub_sub}}}
+                                  = sub_sub.name
+          %li.toppage-header-top__footer-search-brand
+            %h2
+              = link_to sell_index_path do
+                = icon('fas', 'tag lg', alt: 'tag-icon',
+                style: 'color:#0095ee', class: 'toppage-header-top__footer-search-brand--icon')
+                %span 全商品一覧
+      .toppage-header-top__footer-contents
+        - if user_signed_in?
+          .toppage-header-top__footer-contents-wrapper
+            .toppage-header-top__footer-contents--new-register-btn
+              = link_to 'マイページ', user_path(current_user)
+            .toppage-header-top__footer-contents--user-login-btn
+              = link_to 'ログアウト', new_user_path
+        - else
+          .toppage-header-top__footer-contents-wrapper
+            .toppage-header-top__footer-contents--new-register-btn
+              = link_to '新規会員登録', new_user_registration_path
+            .toppage-header-top__footer-contents--user-login-btn
+              = link_to 'ログイン', new_user_session_path

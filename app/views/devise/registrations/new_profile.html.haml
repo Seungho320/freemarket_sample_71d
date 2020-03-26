@@ -1,4 +1,4 @@
-= render "fixed-bar/header"
+= render "header_profile"
 .signUp_main
   .signUp_main__form
     .signUp_main__form__header
@@ -10,27 +10,27 @@
           = f.label :名字
           %em 必須
           %br/
-          = f.text_field :first_name, autofocus: true
+          = f.text_field :first_name, autofocus: true, placeholder: '例) 山田'
         .field
           = f.label :名前
           %em 必須
           %br/
-          = f.text_field :last_name, autofocus: true
+          = f.text_field :last_name, autofocus: true, placeholder: '例) 彩'
         .field
           = f.label :名字（フリガナ）
           %em 必須
           %br/
-          = f.text_field :first_name_kana, autofocus: true
+          = f.text_field :first_name_kana, autofocus: true, placeholder: '例) ヤマダ'
         .field
           = f.label :名前（フリガナ）
           %em 必須
           %br/
-          = f.text_field :last_name_kana, autofocus: true
+          = f.text_field :last_name_kana, autofocus: true, placeholder: '例) アヤ'
         .field
           = f.label :生年月日
           %em 必須
           %br/
-          = f.text_field :birthday, autofocus: true
+          = f.text_field :birthday, autofocus: true, placeholder: '例) 19980309'
         .actions
           = f.submit "新規登録"
 = render "fixed-bar/footer"
