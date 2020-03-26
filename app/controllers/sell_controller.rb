@@ -24,4 +24,12 @@ class SellController < ApplicationController
     params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id).merge(seller_id_id: current_user.id)
   end
 
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: 300,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
 end
