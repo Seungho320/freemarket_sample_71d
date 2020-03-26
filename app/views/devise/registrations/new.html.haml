@@ -1,4 +1,4 @@
-= render "fixed-bar/header"
+= render "header_new"
 .signUp_main
   .signUp_main__form
     .signUp_main__form__header
@@ -10,23 +10,23 @@
           = f.label :ニックネーム
           %em 必須
           %br/
-          = f.text_field :nickname, autofocus: true, maxlength: "6"
+          = f.text_field :nickname, autofocus: true, maxlength: "6", placeholder: '例) フリマ太郎'
         .field
           = f.label :メールアドレス
           %em 必須
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC・携帯どちらでも可'
         .field
           = f.label :パスワード
           - if @minimum_password_length
             %em 必須
           %br/
-          = f.password_field :password, autocomplete: "new-password",minlength: "7"
+          = f.password_field :password, autocomplete: "new-password",minlength: "7", placeholder: '7文字以上'
         .field
           = f.label :パスワードの確認
           %em 必須
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '7文字以上'
         .actions
           = f.submit "次へ"
 = render "fixed-bar/footer"

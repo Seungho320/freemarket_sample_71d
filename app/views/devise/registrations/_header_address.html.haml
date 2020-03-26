@@ -1,0 +1,18 @@
+%header.signup-header
+  %h1
+    = link_to root_path do
+      = image_tag 'material/logo/logo.png', alt: 'mercari'
+  %nav.signup-header__progress-bar.signup-header__bar
+    %ol.clearfix
+      %li.signup-header__list.signup-header__list--through
+        会員情報
+        .signup-header__progress-status
+      %li.signup-header__list.signup-header__list--active
+        住所情報登録
+        .signup-header__progress-status
+      %li.signup-header__list
+        本人確認情報
+        .signup-header__progress-status
+      %li.signup-header__list
+        完了
+        .signup-header__progress-status
