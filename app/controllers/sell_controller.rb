@@ -11,10 +11,16 @@ class SellController < ApplicationController
     @area = Area.find(@item.area_id)
     @seller = User.find(@item.seller_id_id)
   end
+
   def new
     if user_signed_in?
       @item = Item.new
       @item.item_imgs.new
+      @categories = Category.where(sub: params[:sub], sub_sub: params[:sub_sub])
+      respond_to do |format|
+        format.html
+        format.json
+      end
     else
       render :new
     end
