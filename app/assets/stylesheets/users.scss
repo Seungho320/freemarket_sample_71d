@@ -1,6 +1,11 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  display: flex;
+}
+
+
 .bread-crumbs{
   position: relative;
   border-top: 1px solid #eee;
@@ -209,4 +214,50 @@
       text-align: center;
       margin-top: 40px;
 }
+}
+
+.sidebar-container{
+  float: left;
+  width: 230px;
+  top: 232px;
+  position: absolute;
+  margin-left: 55px;;
+  .sidebar-container-nav {
+    text-align: center;
+    &__container {
+      border: 1px solid #eee;
+      background-color: #fff;
+      margin-bottom: 30px;
+    }
+    &__list-white {
+      border: 1px solid #eee;
+      background-color:#3CCACE;
+      color: white;
+      cursor: pointer;
+      padding:5px 10px;
+      text-align: left;
+      a:hover {
+        color: white;
+      }
+    }
+    &__list {
+      border: 1px solid #eee;
+      cursor: pointer;
+      padding:5px 10px;
+      text-align: left;
+      a:hover {
+        color: $sky_blue;
+      }
+    }
+    &__head-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
