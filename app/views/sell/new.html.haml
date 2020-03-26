@@ -41,7 +41,9 @@
             カテゴリー
             %span.form-require
               必須
-          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください"
+          %div{ id: 'sell-main__select-category--wrapper' }
+            .sell-main__select-wrap
+              = f.collection_select :category_id, Category.where(sub: '0'), :id, :name, {prompt: "選択してください"}, class: 'sell-main__select-default', id: 'sell-main__select-category--main'
           %h3.upload-name
             ブランド
             %span.form-require-sub 
