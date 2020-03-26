@@ -1,0 +1,65 @@
+= render "fixed-bar/header"
+.card-container
+  %h1.card-information-input クレジットカード情報入力
+  .from-container
+    = form_tag(pay_card_index_path, method: :post, id: 'charge-form') do
+      .form-container
+        %label.topname カード番号
+        %span.form-require 必須
+        %br
+        = text_field_tag "number","", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        %br
+        .image-card
+          %ul
+            %li
+              = image_tag 'visa.svg', width: '23', height: '17', alt: 'visa'
+            %li
+              = image_tag 'master-card-85842fa1b6d67b20df737e55dc33e397e769b19322498a6c05e8e91c322e3e24.svg', width: '23', height: '17', alt: 'master'
+            %li
+              = image_tag 'saison-card-22d5d06b10305ee4c8d2c38fd8100dafed0f8f5a9319b3e864b621d136c0a94c.svg', width: '23', height: '17', alt: 'saison'
+            %li
+              = image_tag 'jcb-1368496dcf790f8c6761d3f15afed0dab0c1d9fb688f168bae6666fbf5480e4c.svg', width: '23', height: '17', alt: 'jcb'
+            %li
+              = image_tag 'dinersclub-91c36d9ea8e683e8aef2c4a2582df11091498d58de499e7ed73c92e09b483850.svg', width: '23', height: '17', alt: 'dinersclub'
+            %li
+              = image_tag 'discover-f7874ba3a3f5aec139434a99afe2cd4f519ed22531bdf77eff6a7f69291b2623.svg', width: '23', height: '17', alt: 'discover'
+        %label.topname 有効期限
+        %span.form-require 必須
+        %br
+        %select#exp_month{name: "exp_month", type: "text"}
+          %option{value: ""} --
+          %option{value: "1"}01
+          %option{value: "2"}02
+          %option{value: "3"}03
+          %option{value: "4"}04
+          %option{value: "5"}05
+          %option{value: "6"}06
+          %option{value: "7"}07
+          %option{value: "8"}08
+          %option{value: "9"}09
+          %option{value: "10"}10
+          %option{value: "11"}11
+          %option{value: "12"}12
+        %span 月/
+        %select#exp_year{name: "exp_year", type: "text"}
+          %option{value: ""} --
+          %option{value: "2019"}19
+          %option{value: "2020"}20
+          %option{value: "2021"}21
+          %option{value: "2022"}22
+          %option{value: "2023"}23
+          %option{value: "2024"}24
+          %option{value: "2025"}25
+          %option{value: "2026"}26
+          %option{value: "2027"}27
+          %option{value: "2028"}28
+          %option{value: "2029"}29
+        %span 年
+        %br
+        %laber.topname セキュリティーコード
+        %span.form-require 必須
+        = text_field_tag "cvc","", class: "number", placeholder: "カード背面4行もしくは3行の番号" ,maxlength: "4", type: "text", id: "cvc"
+        #card_token
+        = submit_tag '追加する', name: 'btn', id: "token_submit", class: 'submit'
+        -# <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_b7c55c13b2c614fddbb0e807"></script>
+= render "toppage/footer"

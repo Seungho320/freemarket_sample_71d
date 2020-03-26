@@ -65,6 +65,12 @@ gem 'devise'
 gem 'erb2haml'
 gem 'active_hash'
 gem 'font-awesome-sass'
+gem 'payjp'
+gem 'dotenv-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
