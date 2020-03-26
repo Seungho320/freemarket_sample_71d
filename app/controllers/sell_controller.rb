@@ -14,8 +14,9 @@ class SellController < ApplicationController
   def new
     if user_signed_in?
       @item = Item.new
+      @item.item_imgs.new
     else
-      redirect_to(user_session_path)
+      render :new
     end
   end
 
@@ -30,7 +31,7 @@ class SellController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id).merge(seller_id_id: current_user.id)
+    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id, item_imgs_attributes: [:img]).merge(seller_id_id: current_user.id)
   end
 
   def pay

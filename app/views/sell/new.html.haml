@@ -5,17 +5,20 @@
       .sell-main__form-top
         %h3.upload-name
           出品画像
-          %span.form-require 
+          %span.form-require
             必須
-      %p.form-coment 最大10枚までアップロードできます。
-      .dropbox-container
-        = f.label :image, class: 'container-image' do
-          = icon('fas','camera', class:'container-icon')
-          = f.file_field :image, class: 'image-file'
-          %h3.container-coment
-            ドラッグアンドドロップ
-            %br
-              またはクリックしてファイルをアップロード
+      %p.form-coment 最大5枚までアップロードできます。
+      .image-box
+        .dropbox-container
+          #previews
+            - if @item.persisted?
+              - @item.item_imgs.each_with_index do |image, i|
+                = image_tag image.img.url, data: { index: i }, width: "100", height: '100'
+          .js-input
+            = f.fields_for :item_imgs do |i|
+              .image-file_group{"data-index" => "#{i.index}"}
+                = i.file_field :img, class: 'image-file'
+                %span.js-remove 削除
       .style-top-line
       .sell-main__form-box2
         .sell-main__form-top
