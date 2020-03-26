@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', ()=> {
-  // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
     const html = `<div class="image-file_group" data-index="${index}">
                     <input class="image-file" type="file" 
@@ -9,21 +8,35 @@ $(document).on('turbolinks:load', ()=> {
                   </div>`;
     return html;
   }
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    return html;
+  }
 
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  let fileIndex = [1,2,3,4,5];
 
   $('.dropbox-container').on('change', '.image-file', function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('.dropbox-container').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    const targetIndex = $(this).parent().data('index');
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else {
+      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('.inputtt').append(buildFileField(fileIndex[0]));
+      fileIndex.shift();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
   });
 
   $('.dropbox-container').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+
+
     $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
+    $(`img[data-index="${targetIndex}"]`).remove();
+
     if ($('.image-file').length == 0) $('.dropbox-container').append(buildFileField(fileIndex[0]));
   });
 });
