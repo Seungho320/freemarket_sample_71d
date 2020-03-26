@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20200323100611) do
 
-  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.string   "customer_id"
-    t.string   "card_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",                    null: false
     t.string   "last_name",                     null: false
@@ -33,6 +26,14 @@ ActiveRecord::Schema.define(version: 20200323100611) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id"
+    t.string   "card_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
