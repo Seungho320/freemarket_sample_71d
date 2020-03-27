@@ -1,0 +1,62 @@
+.kakunin-main{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  .kakunin-buy-head{
+    font-size: 22px;
+    padding: 32px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+  }
+  .kakunin-buy-content-first{
+    margin: 0;
+    text-align: center;
+    padding: 32px 16px;
+    border-top: 1px solid #f5f5f5;
+    .kakunin-buy-content-inner{
+      max-width: 343px;
+      margin: 0 auto;
+      .kakunin-buy-item-box{
+        display: flex;
+        .kakunin-buy-item{
+          height: 80px;
+          width: 80px;
+          min-width: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .kakunin-item-image{
+            width: 80px;
+            opacity: 1;
+            transition: opacity .3s;
+            vertical-align: middle;
+          }
+        }
+        .kakunin-buy-item-detail{
+          margin-left: 16px;
+          .kakunin-buy-item-name{
+            font-size: 14px;
+            margin: 0;
+            padding: 0 0 8px;
+            line-height: 1.5;
+            text-align: left;
+          }
+          .kakunin-buy-price-data{
+            margin: 0;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            .kakunin-buy-price{
+              font-size: 12px;
+            }
+            .kakunin-buy-tax{
+              font-size: 12px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
