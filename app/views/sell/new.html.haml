@@ -82,7 +82,7 @@
             .number-price
               %h3.upload-place
                 ¥
-              = f.number_field :price, class: 'number-field', min: '300', max: '9,999,999'
+              = f.number_field :price, {class: 'number-field', min: '300', max: '9,999,999', id: 'sell-main__price-input', placeholder: '例）300'}
           .price_box
             %h3.commission
               販売手数料（10%）
