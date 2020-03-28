@@ -83,11 +83,15 @@
               %h3.upload-place
                 ¥
               = f.number_field :price, class: 'number-field', min: '300', max: '9,999,999'
-          %h3.commission
-            販売手数料（10%）
+          .price_box
+            %h3.commission
+              販売手数料（10%）
+            .price_box_right{ id: 'sell-main__fee' } -
           .style-bottom-line
-          %h3.commission
-            販売利益
+          .price_box
+            %h3.commission
+              販売利益
+            .price_box_right{ id: 'sell-main__profit' } -
           .submit-place
             = f.submit '出品する', class: 'submit'
           .return_btn

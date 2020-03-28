@@ -176,7 +176,6 @@
         }
       }
       .commission {
-        padding: 12px 0px;
         font-size: 14px;
         color: #333333;
       }
@@ -212,6 +211,14 @@
         .return {
           color: skyblue;
           font-size: medium;
+        }
+      }
+      .price_box {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0px;
+        &_right {
+          padding-right: 20px;
         }
       }
 }
