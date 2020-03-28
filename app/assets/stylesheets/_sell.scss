@@ -205,9 +205,13 @@
           min-height: 50px;
           border-style: none;
         }
-        a {
-          text-decoration: none;
-          color: #0095ee;;
+      }
+      .return_btn {
+        text-decoration: none;
+        text-align: center;
+        .return {
+          color: skyblue;
+          font-size: medium;
         }
       }
 }
