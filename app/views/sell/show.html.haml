@@ -77,6 +77,6 @@
           削除
   - else
     .itemDetails__boxs
-      = link_to "#" do
+      = link_to sell_purchase_index_path(@item) do
         %input.move{type: "submit", value: "購入画面に進む"}
 = render "toppage/footer"

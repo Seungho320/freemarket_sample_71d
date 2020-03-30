@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # post 'purchase/show'
+
+  get 'purchase/done'
+
   get 'card/new'
 
   get 'card/show'
@@ -15,19 +19,30 @@ Rails.application.routes.draw do
   end
 
   root 'toppage#index'
-  resources :sell, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :users, only: [:show, :new] do
-    collection do
-      get 'item_status', to:'users#item_status'
+  resources :sell, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :purchase, only: [:show] do
+      collection do
+        get 'show', to: 'purchase#show'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end
-  resources :card, only: [:new, :show] do
-    collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
 
-    end
+  resources :users, only: [:show, :new] do
+      collection do
+        get 'item_status', to:'users#item_status'
+      end
   end
+
+  resources :users, only: [:show, :new]
+    resources :card, only: [:new, :show] do
+      collection do
+        post 'show', to: 'card#show'
+        post 'pay', to: 'card#pay'
+        post 'delete', to: 'card#delete'
+      end
+    end
+
 end
   
