@@ -35,6 +35,19 @@ class SellController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
@@ -43,7 +56,7 @@ class SellController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id, item_imgs_attributes: [:img]).merge(seller_id_id: current_user.id)
+    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id, item_imgs_attributes: [:img, :id]).merge(seller_id_id: current_user.id)
   end
 
   def pay
