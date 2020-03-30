@@ -1,3 +1,5 @@
+= render "fixed-bar/header"
 %h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+= link_to root_path, id: 'done-btn' do
+  トップページ
+= render "toppage/footer"

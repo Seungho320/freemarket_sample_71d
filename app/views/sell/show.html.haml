@@ -60,7 +60,7 @@
         (税込)
       %span.fee
         送料込み
-    = link_to purchase_index_path(@item) do
+    = link_to sell_purchase_index_path(@item) do
       %input.move{type: "submit", value: "購入画面に進む"}
     .itemDetails__box__description
       = @item.text
