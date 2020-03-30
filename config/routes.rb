@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   root 'toppage#index'
-  resources :sell, only: [:index, :show, :new, :create, :edit, :update]
+  resources :sell, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:show, :new] do
     collection do
       get 'item_status', to:'users#item_status'
