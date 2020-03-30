@@ -2,7 +2,7 @@ class ToppageController < ApplicationController
   before_action :set_pulldown, only: [:index]
 
   def index
-    @items = Item.limit(3).order('created_at DESC')
+    @items = Item.where(buyer_id_id: nil).limit(3).order('created_at DESC')
   end
 
 

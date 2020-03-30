@@ -2,7 +2,7 @@ class SellController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.order(id:'DESC').page(params[:page]).per(6)
+    @items = Item.where(buyer_id_id: nil).order(id:'DESC').page(params[:page]).per(6)
   end
   def show
     @category = Category.find(@item.category_id)
