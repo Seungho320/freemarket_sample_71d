@@ -9,7 +9,7 @@
     .productLists
       .productList
         - @items.each do |item|
-          = link_to "#", class: "productList__link" do
+          = link_to sell_path(item), class: "productList__link" do
             .productList__img
               = image_tag item.item_imgs.first.img.url, class:"productList__imgs"
             .productList--body
