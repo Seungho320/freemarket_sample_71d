@@ -8,39 +8,16 @@
           新規投稿商品
     .productLists
       .productList
-        = link_to "#", class: "productList__link" do
-          = image_tag "material/icon/member_photo_noimage_thumb.png"
-          .productList--body
-            %h3.name
-              product3
-            .details
-              %ul
-                %li
-                  3000円
-              %p
-                （税込）
-      .productList
-        = link_to "#", class: "productList__link" do
-          = image_tag "material/icon/member_photo_noimage_thumb.png"
-          .productList--body
-            %h3.name
-              product3
-            .details
-              %ul
-                %li
-                  3000円
-              %p
-                （税込）
-      .productList
-        = link_to "#", class: "productList__link" do
-          = image_tag "material/icon/member_photo_noimage_thumb.png"
-          .productList--body
-            %h3.name
-              product3
-            .details
-              %ul
-                %li
-                  3000円
-              %p
-                （税込）
-
+        - @items.each do |item|
+          = link_to "#", class: "productList__link" do
+            .productList__img
+              = image_tag item.item_imgs.first.img.url, class:"productList__imgs"
+            .productList--body
+              %h3.name
+                = item.name
+              .details
+                %ul
+                  %li
+                    #{item.price} 円
+                %p
+                  （税込）

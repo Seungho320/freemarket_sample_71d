@@ -15,14 +15,22 @@ Rails.application.routes.draw do
   end
 
   root 'toppage#index'
+  
   resources :sell, only: [:index, :show, :new, :create, :edit, :update]
-  resources :users, only: [:show, :new]
-    resources :card, only: [:new, :show] do
-      collection do
-        post 'show', to: 'card#show'
-        post 'pay', to: 'card#pay'
-        post 'delete', to: 'card#delete'
-      end
+
+  resources :users, only: [:show, :new] do
+    collection do
+      get 'item_status', to:'users#item_status'
     end
+  end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
 end
   

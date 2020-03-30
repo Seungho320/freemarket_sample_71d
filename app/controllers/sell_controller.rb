@@ -1,6 +1,6 @@
 class SellController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.all.order(id:'DESC').page(params[:page]).per(6)
   end
   def show
     @item = Item.find(params[:id])
@@ -46,6 +46,12 @@ class SellController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 
   private

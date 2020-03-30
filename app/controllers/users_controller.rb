@@ -10,4 +10,9 @@ class UsersController < ApplicationController
   def show
   end
 
+  def item_status
+    @items = Item.where(seller_id_id: current_user.id)
+  end
+
+
 end

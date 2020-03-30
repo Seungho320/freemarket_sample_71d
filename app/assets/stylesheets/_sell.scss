@@ -172,7 +172,6 @@
         }
       }
       .commission {
-        padding: 12px 0px;
         font-size: 14px;
         color: #333333;
       }
@@ -201,9 +200,21 @@
           min-height: 50px;
           border-style: none;
         }
-        a {
-          text-decoration: none;
-          color: #0095ee;;
+      }
+      .return_btn {
+        text-decoration: none;
+        text-align: center;
+        .return {
+          color: skyblue;
+          font-size: medium;
+        }
+      }
+      .price_box {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0px;
+        &_right {
+          padding-right: 20px;
         }
       }
 }
