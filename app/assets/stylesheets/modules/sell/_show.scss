@@ -33,11 +33,20 @@
           width: 300px;
           height: 300px;
           background: darkgrey;
+          .index-item-image{
+            height: 100%;
+            width: 100%;
+          }
         }
-        .img2 {
-          width: 60px;
-          height: 60px;
+        .sub-imgs-box{
+          display: flex;
+          height: 75px;
+        }
+        .sub-img {
+          width: 75px;
+          height: 75px;
           background: lightgray;
+          display: flex;
         }
       }
       &__detail {
@@ -97,6 +106,17 @@
         font-size: 16px;
       }
     }
+    &__description {
+      padding: 24px 40px 40px;
+      word-wrap:break-all;
+    }  
+  }
+  &__boxs{
+    width: 700px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 0 20px 0;
     a {
       width: 620px;
       display: block;
@@ -115,9 +135,41 @@
 
       }
     }
-    &__description {
-      padding: 24px 40px 40px;
-      word-wrap:break-all;
+    .delete-botton1 {
+      width: 620px;
+      display: block;
+      margin: auto;
+      
+      .move1 {
+        width: 620px;
+        height: 60px;
+        background: #3ccace;
+        border: 1px solid #3ccace;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        margin-top: 16px;
+        text-align: center;
+      }
+    }
+    .delete-botton2 {
+      width: 620px;
+      display: block;
+      margin: auto;
+      
+      .move2 {
+        width: 620px;
+        height: 60px;
+        background: red;
+        border: 1px solid red;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        margin-top: 40px;
+        text-align: center;
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 = render "fixed-bar/header"
 .sell-main
   .sell-main__form-box
-    = form_for @item, url: sell_index_path do |f|
+    = form_for @item, url: sell_path do |f|
       .sell-main__form-top
         %h3.upload-name
           出品画像
@@ -93,7 +93,7 @@
               販売利益
             .price_box_right{ id: 'sell-main__profit' } -
           .submit-place
-            = f.submit '出品する', class: 'submit'
+            = f.submit '編集する', class: 'submit'
           .return_btn
             = link_to 'もどる', '#', class: 'return'
 = render "fixed-bar/footer"

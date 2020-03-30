@@ -6,11 +6,11 @@
           マイページ
           = icon('fas,' 'fa-angle-right',class:'list-icon')
       %li.sidebar-container-nav__list
-        = link_to "#" do
+        = link_to new_sell_path do
           出品する
           = icon('fas,' 'fa-angle-right',class:'list-icon')
       %li.sidebar-container-nav__list
-        = link_to "#" do
+        = link_to "item_status" do
           出品した商品-出品中
           = icon('fas,' 'fa-angle-right',class:'list-icon')
       %li.sidebar-container-nav__list
@@ -32,6 +32,9 @@
         = link_to new_user_path do
           ログアウト
           = icon('fas,' 'fa-angle-right',class:'list-icon')
+
+
+
 
 
 

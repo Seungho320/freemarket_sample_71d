@@ -64,10 +64,19 @@
           height: 50px;
           text-align: center;
           display: inline-block;
-          color: rgb(0, 149, 238);
           margin: 0 11px 0 11px;
           .image-file {
             width: 100%;
+          }
+          .js-remove {
+          display: block;
+          width: 50px;
+          background-color: #fff;
+          border-width: thin;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin: 2px auto;
+          font-size: 12px;
           }
         }
       }
@@ -176,7 +185,6 @@
         }
       }
       .commission {
-        padding: 12px 0px;
         font-size: 14px;
         color: #333333;
       }
@@ -205,9 +213,21 @@
           min-height: 50px;
           border-style: none;
         }
-        a {
-          text-decoration: none;
-          color: #0095ee;;
+      }
+      .return_btn {
+        text-decoration: none;
+        text-align: center;
+        .return {
+          color: skyblue;
+          font-size: medium;
+        }
+      }
+      .price_box {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0px;
+        &_right {
+          padding-right: 20px;
         }
       }
 }

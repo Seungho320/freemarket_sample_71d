@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   root 'toppage#index'
-  resources :sell, only: [:index, :show, :new, :create] do
+  resources :sell, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :purchase, only: [:show] do
       collection do
         get 'show', to: 'purchase#show'
@@ -27,6 +27,12 @@ Rails.application.routes.draw do
         get 'done', to: 'purchase#done'
       end
     end
+  end
+
+  resources :users, only: [:show, :new] do
+      collection do
+        get 'item_status', to:'users#item_status'
+      end
   end
 
   resources :users, only: [:show, :new]
@@ -37,7 +43,6 @@ Rails.application.routes.draw do
         post 'delete', to: 'card#delete'
       end
     end
-  
-  
+
 end
   

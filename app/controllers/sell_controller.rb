@@ -1,9 +1,10 @@
 class SellController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
-    @items = Item.all
+    @items = Item.all.order(id:'DESC').page(params[:page]).per(6)
   end
   def show
-    @item = Item.find(params[:id])
     @category = Category.find(@item.category_id)
     @brand = Brands.find(@item.brand_id)
     @condition = Item_condition.find(@item.item_condition_id)
@@ -22,22 +23,43 @@ class SellController < ApplicationController
         format.json
       end
     else
-      render :new
+      redirect_to root_path
     end
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to root_path, notice: '投稿が完了しました'
     else
       redirect_to new_sell_path unless @item.valid?
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
+  end
+
   private
+
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id, item_imgs_attributes: [:img]).merge(seller_id_id: current_user.id).merge(buyer_id_id: current_user.id)
+    params.require(:item).permit(:name, :text, :price, :category_id, :brand_id, :item_condition_id, :area_id, :send_days_id, item_imgs_attributes: [:img, :id]).merge(seller_id_id: current_user.id).merge(buyer_id_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def pay
