@@ -116,6 +116,30 @@
     &__description {
       padding: 24px 40px 40px;
       word-wrap:break-all;
+    }  
+  }
+  &__boxs{
+    width: 700px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+    a {
+      width: 620px;
+      display: block;
+      margin: auto;
+      .move {
+        width: 620px;
+        height: 60px;
+        background: #3ccace;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        margin-top: 16px;
+        text-align: center;
+      }
     }
   }
 }
