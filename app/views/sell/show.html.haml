@@ -69,4 +69,8 @@
       %input.move{type: "submit", value: "購入画面に進む"}
     .itemDetails__box__description
       = @item.text
+  .itemDetails__boxs
+    = link_to sell_path(@item.id), method: :delete, class: "delete-botton" do
+      .move
+        削除
 = render "toppage/footer"
