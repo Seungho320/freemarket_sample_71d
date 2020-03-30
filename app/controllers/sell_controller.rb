@@ -22,7 +22,7 @@ class SellController < ApplicationController
         format.json
       end
     else
-      render :new
+      redirect_to root_path
     end
   end
 
