@@ -1,6 +1,6 @@
 class SellController < ApplicationController
   def index
-    @items = Item.all.order(id:'DESC').page(params[:page]).per(3)
+    @items = Item.all.order(id:'DESC').page(params[:page]).per(6)
   end
   def show
     @item = Item.find(params[:id])

@@ -58,6 +58,13 @@
       }
     }
   }
-.page{
-  color: red;
+
+.pagination{
+  text-align: center;
+  a {
+    color: black;
+  }
+  .page{
+    color: #3ccace;
+  }
 }
