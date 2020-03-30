@@ -1,9 +1,10 @@
+= render "fixed-bar/header"
 .itemDetails
   .itemDetails__box
     .itemDetails__box__name
       = @item.name
     .itemDetails__box__wording
-      『#{@item.name}』は、100回の取引実績を持つ#{@seller.nickname}さんから出品されました。#{@category.name}/#{@brand.name}の商品で、東京から#{@send_day.value}で発送されます。
+      『#{@item.name}』は、#{@seller.nickname}さんから出品されました。#{@category.name}/#{@brand.name}の商品で、東京から#{@send_day.value}で発送されます。
     .itemDetails__box__main
       .itemDetails__box__main__photo
         .img1 
@@ -68,3 +69,8 @@
       %input.move{type: "submit", value: "購入画面に進む"}
     .itemDetails__box__description
       = @item.text
+  .itemDetails__boxs
+    = link_to sell_path(@item.id), method: :delete, class: "delete-botton" do
+      .move
+        削除
+= render "toppage/footer"

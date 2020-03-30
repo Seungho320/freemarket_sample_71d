@@ -23,16 +23,26 @@
 .productLists {
   width: 780px;
   margin: 0px auto;
-  display: flex;
-  justify-content: space-around;
 }
 
 .productList {
-  width: 220px;
-  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  &__img {
+    height: 220px;
+    width: 220px;
+  }
+  &__imgs {
+    height: 100%;
+    width: 100%;
+  }
   &__link {
+    display: inline-block;
     text-decoration: none;
     color: black;
+    margin-right: 0;
   }
 }
 
