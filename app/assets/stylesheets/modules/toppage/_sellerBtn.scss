@@ -7,6 +7,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  transition: all 0.3s ease 0s;
   .sellerBox {
     color: #fff;
     display: block;
@@ -18,4 +19,7 @@
     width: 60%;
     text-align: center;
   }
+}
+.sellerBtn:hover {
+  background: rgb(3, 38, 114);
 }
