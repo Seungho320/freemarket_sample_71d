@@ -1,5 +1,9 @@
 = render "fixed-bar/header"
-%h2 購入が完了しました！
-= link_to root_path, id: 'done-btn' do
-  トップページ
+.done
+  .done__box
+    .done__box__title
+      %h2 購入が完了しました！！
+    .done__box__button
+    = link_to root_path, id: 'done-btn' do
+      トップページ
 = render "toppage/footer"
