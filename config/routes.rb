@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new] do
       collection do
         get 'item_status', to:'users#item_status'
+        get 'sold_items', to:'users#sold_items'
+        get 'bought_items', to:'users#bought_items'
       end
   end
 
