@@ -7,4 +7,12 @@ class Item < ApplicationRecord
   validates :item_imgs, presence: true
   belongs_to :seller_id, class_name: "User", foreign_key: 'seller_id_id', optional: true
   belongs_to :buyer_id, class_name: "User", foreign_key: 'buyer_id_id', optional: true
+
+  def self.search(search)
+    if search
+      Item.where(['name LIKE ?', "%#{search}%"])
+    else
+      Item.all
+    end
+  end
 end

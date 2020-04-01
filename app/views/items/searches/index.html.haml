@@ -1,0 +1,22 @@
+= render "fixed-bar/header"
+.index-title-container
+  .index-title
+    検索商品一覧
+.index-main
+  .index-items-container
+    .index-items-category
+      新着アイテム
+    .index-items-box
+      %ul.item-lists
+        - @items.each do |item|
+          .list-item-box
+            = link_to sell_path(item) ,class: "index-item-link" do
+              %li.item-list
+                .item-image-box  
+                  = image_tag item.item_imgs.first.img.url, class:"index-item-image"
+                .item-info
+                  .item-name
+                    = item.name
+                  .item-price
+                    #{item.price} ¥
+= render "toppage/footer"
