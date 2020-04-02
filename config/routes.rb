@@ -45,6 +45,8 @@ Rails.application.routes.draw do
         post 'delete', to: 'card#delete'
       end
     end
-
+  namespace :items do
+      resources :searches, only: :index
+    end
 end
   

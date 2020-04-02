@@ -34,7 +34,22 @@ a {
     .toppage-header-top__header-search {
       width: 100%;
       position: relative;
-      &--search-form {
+        &--search-icon{
+          position: absolute;
+          right:  11px;
+          top: 11px;
+        }
+        &--search-submit {
+          width: 16px;
+          height: 16px;
+          line-height: 1.4em;
+          cursor: pointer;
+          position: absolute;
+          right: 11px;
+          top: 11px;
+          opacity: 0;
+        }
+        &--search-form {
           background-color: rgb(245, 245, 245);
           font-size: 16px;
           height: 40px;
@@ -53,15 +68,6 @@ a {
             border-color: rgb(0, 149, 238);
           }
           }
-        &--search-btn {
-          width: 16px;
-          height: 16px;
-          line-height: 1.4em;
-          cursor: pointer;
-          position: absolute;
-          right: 5px;
-          top: 5px;
-        }
        }
     }
   }
