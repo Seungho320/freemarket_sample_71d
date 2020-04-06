@@ -40,6 +40,10 @@ class SellController < ApplicationController
     @main_category = Category.where(sub: '0')
     @sub_category = Category.where(sub: "#{@smallcategory.sub}", sub_sub: '0') unless Category.find(@item.category_id).sub_sub == '0'
     @sub_sub_category = Category.where(sub_sub: "#{@smallcategory.sub_sub}" )
+    item = Item.find(params[:id])
+    unless item.seller_id_id == current_user.id
+      redirect_to root_path
+    end
   end
 
   def update
