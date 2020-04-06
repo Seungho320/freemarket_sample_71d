@@ -44,6 +44,14 @@
           %div{ id: 'sell-main__select-category--wrapper' }
             .sell-main__select-wrap
               = f.collection_select :category_id, Category.where(sub: '0'), :id, :name, {prompt: "選択してください"}, class: 'sell-main__select-default', id: 'sell-main__select-category--main'
+            - if @category != '0'
+              .sell-main__select-wrap
+                = f.collection_select :category_id, @sub_sub_category, :id, :name, { include_blank: '--', selected: "#{@smallcategory.id}" }, class: 'sell-main__select-default'
+            - else
+              .sell-main__select-wrap
+                = f.collection_select :category_id, @sub_category, :id, :name, { include_blank: '--', selected: "#{@category.id}" }, class: 'sell-main__select-default'
+              .sell-main__select-wrap
+                = f.collection_select :category_id, @sub_sub_category, :id, :name, { include_blank: '--', selected: "#{@smallcategory.id}" }, class: 'sell-main__select-default'
           %h3.upload-name
             ブランド
             %span.form-require

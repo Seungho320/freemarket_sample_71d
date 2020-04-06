@@ -1,6 +1,6 @@
 class SellController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_category, only: [:edit]
   def index
     @items = Item.where(buyer_id_id: nil).order(id:'DESC').page(params[:page]).per(6)
   end
@@ -37,6 +37,9 @@ class SellController < ApplicationController
   end
 
   def edit
+    @main_category = Category.where(sub: '0')
+    @sub_category = Category.where(sub: "#{@smallcategory.sub}", sub_sub: '0') unless Category.find(@item.category_id).sub_sub == '0'
+    @sub_sub_category = Category.where(sub_sub: "#{@smallcategory.sub_sub}" )
   end
 
   def update
@@ -70,4 +73,12 @@ class SellController < ApplicationController
     currency: 'jpy'
     )
   end
+
+  # カテゴリー
+  def set_category
+    @smallcategory = Category.find(@item.category_id)
+    @category = Category.find(Category.find(@item.category_id).sub_sub) unless Category.find(@item.category_id).sub_sub == '0'
+    @bigcategory = Category.find(Category.find(@item.category_id).sub)
+  end
+
 end
