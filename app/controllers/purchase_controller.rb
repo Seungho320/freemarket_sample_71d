@@ -11,6 +11,8 @@ class PurchaseController < ApplicationController
       redirect_to controller: "card", action: "new"
     elsif not user_signed_in?
       redirect_to new_user_session_path
+    elsif current_user.id == @item.seller_id_id
+      redirect_to root_path
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
@@ -22,6 +24,9 @@ class PurchaseController < ApplicationController
 
   def pay
     @item = Item.find(params[:sell_id])
+    if current_user.id == @item.seller_id_id
+      redirect_to root_path
+    else
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -31,6 +36,7 @@ class PurchaseController < ApplicationController
     )
     @item.update(buyer_id_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
+    end
   end
 
 end
