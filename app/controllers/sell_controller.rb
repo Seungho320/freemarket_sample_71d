@@ -1,9 +1,11 @@
 class SellController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_category, only: [:edit]
+
   def index
     @items = Item.where(buyer_id_id: nil).order(id:'DESC').page(params[:page]).per(6)
   end
+  
   def show
     @category = Category.find(@item.category_id)
     @brand = Brands.find(@item.brand_id)
