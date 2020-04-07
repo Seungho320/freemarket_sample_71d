@@ -49,7 +49,8 @@ class SellController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    if current_user.id == @item.seller_id_id
+      @item.update(item_params)
       redirect_to root_path
     else
       render :edit
@@ -62,6 +63,7 @@ class SellController < ApplicationController
       redirect_to root_path
     else
       render :show
+    end
   end
 
   private
