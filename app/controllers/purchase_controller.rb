@@ -13,6 +13,8 @@ class PurchaseController < ApplicationController
       redirect_to new_user_session_path
     elsif current_user.id == @item.seller_id_id
       redirect_to root_path
+    elsif not @item.buyer_id_id.nil?
+      redirect_to root_path
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
