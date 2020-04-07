@@ -57,8 +57,11 @@ class SellController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if current_user.id == @item.seller_id_id
+      @item.destroy
+      redirect_to root_path
+    else
+      render :show
   end
 
   private
