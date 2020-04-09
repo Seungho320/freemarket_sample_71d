@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   // ヘッダー「カテゴリーから探す」プルダウン 
     $(".toppage-header-top__footer-search-wrapper").hover(function () {
       $(".first-category__wrapper").show()
